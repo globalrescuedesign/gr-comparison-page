@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Rescue — Smarter Protection. Stronger Outcomes.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  /* ---------- TOKENS ---------- */
+  :root {
+    --red: #C8102E;
+    --red-dark: #A50C24;
+    --navy: #0A2540;
+    --navy-deep: #061A30;
+    --ink: #0F1E33;
+    --text: #2A3447;
+    --muted: #6B7280;
+    --line: #E5E7EB;
+    --line-soft: #EEF1F4;
+    --bg: #FFFFFF;
+    --bg-soft: #F5F7FA;
+    --radius: 6px;
+    --radius-lg: 10px;
+    --shadow-sm: 0 1px 2px rgba(10, 37, 64, 0.06);
+    --shadow: 0 4px 14px rgba(10, 37, 64, 0.08);
+    --shadow-lg: 0 12px 30px rgba(10, 37, 64, 0.12);
+    --max: 1200px;
+    --gutter: 28px;
+  }
+
+  /* ---------- RESET ---------- */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.55;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  /* ---------- HEADER ---------- */
+  .site-header {
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+  }
+  .logo img {
+    height: 36px;
+    width: auto;
+    display: block;
+  }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: auto;
+    margin-right: 28px;
+  }
+  .main-nav a {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #3a4555;
+    transition: color 0.15s;
+  }
+  .main-nav a:hover { color: var(--red); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 22px;
+    font-weight: 600;
+    font-size: 14.5px;
+    border-radius: var(--radius);
+    transition: all 0.18s ease;
+    white-space: nowrap;
+    line-height: 1;
+  }
+  .btn-primary { background: var(--red); color: white; }
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); box-shadow: var(--shadow); }
+  .btn-lg { padding: 14px 26px; font-size: 15px; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    min-height: 440px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #2d3e54;
+  }
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    background-image: url('assets/img/hero.jpg');
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(245,247,250,0.96) 0%, rgba(245,247,250,0.85) 30%, rgba(245,247,250,0.4) 50%, rgba(245,247,250,0) 65%);
+  }
+  .hero .container { position: relative; z-index: 2; width: 100%; }
+  .hero-content { max-width: 520px; padding: 64px 0 60px; }
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.08;
+    margin: 0 0 14px 0;
+    color: var(--ink);
+    letter-spacing: -0.7px;
+  }
+  .hero-accent {
+    color: var(--red);
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .hero-body {
+    font-size: 15.5px;
+    color: #3a4555;
+    margin-bottom: 28px;
+    line-height: 1.6;
+    max-width: 440px;
+  }
+
+  /* ---------- MAIN SECTION ---------- */
+  .main-section { padding: 60px 0 72px; background: var(--bg); }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 44px;
+    align-items: start;
+  }
+
+  /* ---------- TOC SIDEBAR ---------- */
+  .toc {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: sticky;
+    top: 88px;
+    box-shadow: var(--shadow-sm);
+  }
+  .toc-header {
+    background: var(--navy);
+    color: white;
+    padding: 14px 22px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+  }
+  .toc-list { list-style: none; padding: 0; margin: 0; }
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px 14px 16px;
+    border-top: 1px solid var(--line-soft);
+    transition: background 0.15s;
+    cursor: pointer;
+  }
+  .toc-item:first-child { border-top: none; }
+  .toc-item:hover { background: var(--bg-soft); }
+  .toc-icon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy);
+  }
+  .toc-text { flex: 1; min-width: 0; }
+  .toc-text strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+  .toc-text span {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+  .toc-chevron { color: #B0B7C2; font-size: 14px; flex-shrink: 0; }
+
+  /* ---------- FEATURED CONTENT ---------- */
+  .featured-eyebrow {
+    text-align: center;
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.2px;
+    margin-bottom: 12px;
+  }
+  .featured-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+  .featured-sub {
+    text-align: center;
+    font-size: 15.5px;
+    color: var(--muted);
+    margin: 0 auto 38px;
+    max-width: 580px;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .card {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+  .card-media {
+    aspect-ratio: 4 / 3;
+    background: var(--bg-soft);
+    position: relative;
+    overflow: hidden;
+  }
+  .card-media .placeholder-label {
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  /* Medjet card */
+  .card-media.brand-medjet {
+    background: #1e3a5f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-media.brand-medjet::after {
+    content: "MEDJET®";
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-style: italic;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: white;
+  }
+
+  /* AMEX card */
+  .card-media.brand-amex {
+    background: #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-media.brand-amex::before {
+    content: "";
+    position: absolute;
+    width: 72%;
+    height: 58%;
+    background: linear-gradient(135deg, #2a2a2a 0%, #4a4a4a 50%, #1f1f1f 100%);
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+  .card-media.brand-amex::after {
+    content: "AMERICAN EXPRESS";
+    position: relative;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #d4d4d4;
+    z-index: 2;
+    margin-bottom: 22%;
+  }
+
+  /* Photo cards */
+  .card-media.photo-summit  { background: #1a1a25 url('assets/img/essentials.jpg') center/cover no-repeat; }
+  .card-media.photo-family  { background: #2d5070 url('assets/img/families.jpg')   center/cover no-repeat; }
+  .card-media.photo-airport { background: #2a3a52 url('assets/img/business.jpg')   center/cover no-repeat; }
+  .card-media.photo-city    { background: #3a2820 url('assets/img/longterm.jpg')   center/cover no-repeat; }
+
+  .card-body {
+    padding: 18px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+  }
+  .card-desc {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0 0 16px 0;
+    flex: 1;
+    line-height: 1.5;
+  }
+  .card-link {
+    color: var(--red);
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    align-self: flex-start;
+  }
+  .card-link::after { content: "→"; transition: transform 0.18s; }
+  .card-link:hover::after { transform: translateX(3px); }
+
+  /* ---------- TRUST BAR ---------- */
+  .trust-bar {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 26px 0;
+  }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .trust-item { display: flex; align-items: center; gap: 14px; }
+  .trust-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .trust-text strong {
+    display: block;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.25;
+  }
+  .trust-text span {
+    display: block;
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  /* ---------- CTA BANNER ---------- */
+  .cta-banner {
+    background: var(--navy);
+    color: white;
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-banner-map {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 380px;
+    height: 380px;
+    opacity: 0.13;
+    pointer-events: none;
+  }
+  .cta-banner .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    position: relative;
+    z-index: 2;
+  }
+  .cta-text { max-width: 720px; }
+  .cta-text h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
+  .cta-text .cta-accent {
+    color: var(--red);
+    font-size: 28px;
+    font-weight: 700;
+    display: block;
+    margin: 2px 0 12px 0;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
+  .cta-text p {
+    margin: 0;
+    color: rgba(255,255,255,0.78);
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 960px) {
+    .main-grid { grid-template-columns: 1fr; }
+    .toc { position: static; }
+    .card-grid { grid-template-columns: repeat(2, 1fr); }
+    .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .main-nav { display: none; }
+    .hero h1 { font-size: 32px; }
+    .cta-banner .container { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 600px) {
+    .card-grid { grid-template-columns: 1fr; }
+    .hero-overlay {
+      background: linear-gradient(to right, rgba(245,247,250,0.95) 0%, rgba(245,247,250,0.85) 100%);
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <a href="#" class="logo" aria-label="Global Rescue home">
+      <img src="assets/img/logo.png" alt="Global Rescue" width="728" height="90">
+    </a>
+    <nav class="main-nav">
+      <a href="#">Why Global Rescue</a>
+      <a href="#">Membership</a>
+      <a href="#">Solutions</a>
+      <a href="#">Resources</a>
+      <a href="#">About Us</a>
+    </nav>
+    <a href="#" class="btn btn-primary">Get Protected</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <h1>Smarter Protection.<br>Stronger Outcomes.</h1>
+      <div class="hero-accent">The best alternatives. The clearest choice.</div>
+      <p class="hero-body">Compare top travel protection and medical evacuation providers and see why Global Rescue is the trusted choice for travelers, families, and organizations around the world.</p>
+      <a href="#" class="btn btn-primary btn-lg">Why Global Rescue is #1</a>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN SECTION -->
+<section class="main-section">
+  <div class="container">
+    <div class="main-grid">
+
+      <!-- TOC SIDEBAR -->
+      <aside class="toc">
+        <div class="toc-header">Table of Contents</div>
+        <ul class="toc-list">
+
+          <li class="toc-item">
+            <div class="toc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3v18"/><path d="M8 21h8"/><path d="M3 7h18"/>
+                <path d="M6 7l-3 6a3 3 0 006 0L6 7z"/>
+                <path d="M18 7l-3 6a3 3 0 006 0L18 7z"/>
+              </svg>
+            </div>
+            <div class="toc-text">
+              <strong>Compare Providers</strong>
+              <span>Side-by-side comparisons that matter</span>
+            </div>
+            <span class="toc-chevron">›</span>
+          </li>
+
+          <li class="toc-item">
+            <div class="toc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 3l4 4-4 4"/>
+                <path d="M21 7H8a4 4 0 00-4 4"/>
+                <path d="M7 21l-4-4 4-4"/>
+                <path d="M3 17h13a4 4 0 004-4"/>
+              </svg>
+            </div>
+            <div class="toc-text">
+              <strong>Best Alternatives</strong>
+              <span>Top alternatives to popular providers</span>
+            </div>
+            <span class="toc-chevron">›</span>
+          </li>
+
+          <li class="toc-item">
+            <div class="toc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="10" r="3"/>
+                <path d="M6.5 19a6 6 0 0111 0"/>
+              </svg>
+            </div>
+            <div class="toc-text">
+              <strong>By Traveler Type</strong>
+              <span>Find the right protection for your needs</span>
+            </div>
+            <span class="toc-chevron">›</span>
+          </li>
+
+          <li class="toc-item">
+            <div class="toc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="7" width="18" height="13" rx="2"/>
+                <path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/>
+                <path d="M3 13h18"/>
+              </svg>
+            </div>
+            <div class="toc-text">
+              <strong>By Use Case</strong>
+              <span>Solutions for every travel scenario</span>
+            </div>
+            <span class="toc-chevron">›</span>
+          </li>
+
+          <li class="toc-item">
+            <div class="toc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <div class="toc-text">
+              <strong>The 5 Essentials</strong>
+              <span>What every traveler needs to stay protected</span>
+            </div>
+            <span class="toc-chevron">›</span>
+          </li>
+
+          <li class="toc-item">
+            <div class="toc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.5 8.5 0 01-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1121 11.5z"/>
+                <circle cx="8" cy="12" r="0.8" fill="currentColor" stroke="none"/>
+                <circle cx="12" cy="12" r="0.8" fill="currentColor" stroke="none"/>
+                <circle cx="16" cy="12" r="0.8" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <div class="toc-text">
+              <strong>Real-Life Scenarios</strong>
+              <span>How Global Rescue helps in real situations</span>
+            </div>
+            <span class="toc-chevron">›</span>
+          </li>
+
+          <li class="toc-item">
+            <div class="toc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M9.1 9.3a3 3 0 015.8 1c0 2-3 3-3 3"/>
+                <circle cx="12" cy="17" r="0.8" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <div class="toc-text">
+              <strong>FAQs</strong>
+              <span>Answers to common questions</span>
+            </div>
+            <span class="toc-chevron">›</span>
+          </li>
+
+          <li class="toc-item">
+            <div class="toc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <ellipse cx="12" cy="12" rx="4" ry="10"/>
+                <path d="M2 12h20"/>
+              </svg>
+            </div>
+            <div class="toc-text">
+              <strong>Why Global Rescue</strong>
+              <span>Our difference. Your advantage.</span>
+            </div>
+            <span class="toc-chevron">›</span>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- FEATURED CONTENT -->
+      <div class="featured-content">
+        <div class="featured-eyebrow">Featured Content</div>
+        <h2 class="featured-title">Compare. Decide. Travel Confidently.</h2>
+        <p class="featured-sub">Expert comparisons and insights to help you choose the right protection.</p>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-media brand-medjet"></div>
+            <div class="card-body">
+              <h3 class="card-title">Best Alternatives to Medjet</h3>
+              <p class="card-desc">See how Global Rescue compares on evacuation, response time, coverage, and more.</p>
+              <a href="#" class="card-link">View Comparison</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media brand-amex"></div>
+            <div class="card-body">
+              <h3 class="card-title">Global Rescue vs. AMEX</h3>
+              <p class="card-desc">See how Global Rescue compares to the American Express® Premium Global Assist.</p>
+              <a href="#" class="card-link">View Comparison</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media photo-summit" role="img" aria-label="Traveler on a mountain ridge"></div>
+            <div class="card-body">
+              <h3 class="card-title">What Are the 5 Essentials for Traveler Protection?</h3>
+              <p class="card-desc">The must-have essentials every traveler needs before they go.</p>
+              <a href="#" class="card-link">Learn More</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media photo-family" role="img" aria-label="Mother and child at Grand Canyon North Rim"></div>
+            <div class="card-body">
+              <h3 class="card-title">Best Protection for Families</h3>
+              <p class="card-desc">Coverage that keeps every family member protected—wherever you go.</p>
+              <a href="#" class="card-link">Explore Options</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media photo-airport" role="img" aria-label="Business traveler walking through an airport"></div>
+            <div class="card-body">
+              <h3 class="card-title">Best Protection for Business Travelers</h3>
+              <p class="card-desc">Solutions for frequent travel, international trips, and high-risk destinations.</p>
+              <a href="#" class="card-link">Explore Options</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media photo-city" role="img" aria-label="Long-term traveler abroad"></div>
+            <div class="card-body">
+              <h3 class="card-title">Best Protection for Long-Term Travelers</h3>
+              <p class="card-desc">Designed for students, expats, digital nomads, and extended adventures.</p>
+              <a href="#" class="card-link">Explore Options</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-grid">
+
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 13v-1a8 8 0 0116 0v1"/>
+            <path d="M4 13h3v6H4a1 1 0 01-1-1v-4a1 1 0 011-1z"/>
+            <path d="M17 13h3a1 1 0 011 1v4a1 1 0 01-1 1h-3v-6z"/>
+            <path d="M19 19v1a2 2 0 01-2 2h-3"/>
+          </svg>
+        </div>
+        <div class="trust-text">
+          <strong>24/7/365 Expert Response</strong>
+          <span>Always here. Always ready.</span>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <ellipse cx="12" cy="12" rx="4" ry="10"/>
+            <path d="M2 12h20"/>
+            <path d="M3 8h18"/>
+            <path d="M3 16h18"/>
+          </svg>
+        </div>
+        <div class="trust-text">
+          <strong>200+ Countries. One Team.</strong>
+          <span>Local expertise. Global reach.</span>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M12 7v10"/>
+            <path d="M7 12h10"/>
+          </svg>
+        </div>
+        <div class="trust-text">
+          <strong>Medical &amp; Security Evacuation</strong>
+          <span>When every second counts.</span>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </div>
+        <div class="trust-text">
+          <strong>Trusted by Millions Worldwide</strong>
+          <span>Proven. Preferred. Global Rescue.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <svg class="cta-banner-map" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <pattern id="dotPattern" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+        <circle cx="3" cy="3" r="1.1" fill="white"/>
+      </pattern>
+      <mask id="mapMask">
+        <rect width="500" height="500" fill="black"/>
+        <!-- North America -->
+        <path d="M50,140 Q70,110 110,115 Q145,118 165,135 Q180,150 175,175 Q170,200 145,215 Q120,225 95,220 Q70,212 55,190 Q42,170 50,140 Z" fill="white"/>
+        <!-- South America -->
+        <path d="M135,240 Q155,235 165,255 Q170,285 160,315 Q150,345 135,355 Q120,350 115,325 Q113,295 120,265 Q125,248 135,240 Z" fill="white"/>
+        <!-- Europe -->
+        <path d="M230,135 Q250,128 270,135 Q285,142 285,158 Q280,172 260,178 Q240,180 225,170 Q220,155 230,135 Z" fill="white"/>
+        <!-- Africa -->
+        <path d="M240,195 Q265,190 285,210 Q295,235 290,265 Q285,295 270,315 Q255,325 240,315 Q225,290 225,255 Q228,220 240,195 Z" fill="white"/>
+        <!-- Asia -->
+        <path d="M300,125 Q345,115 395,130 Q425,145 425,170 Q420,195 390,205 Q360,210 325,200 Q300,190 295,165 Q293,140 300,125 Z" fill="white"/>
+        <!-- Australia -->
+        <path d="M375,280 Q400,275 420,285 Q430,300 420,315 Q400,325 380,320 Q365,310 370,295 Q372,285 375,280 Z" fill="white"/>
+      </mask>
+    </defs>
+    <rect width="500" height="500" fill="url(#dotPattern)" mask="url(#mapMask)"/>
+  </svg>
+  <div class="container">
+    <div class="cta-text">
+      <h2>The World Is Unpredictable.</h2>
+      <span class="cta-accent">Your Protection Shouldn't Be.</span>
+      <p>Join Global Rescue and travel with confidence—wherever life takes you.</p>
+    </div>
+    <a href="#" class="btn btn-primary btn-lg">Get Protected Today</a>
+  </div>
+</section>
+
+</body>
+</html>

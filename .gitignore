@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Raw source assets (kept locally, optimized copies live in assets/img/)
+/iStock-*.jpg
+/AdobeStock_*.jpg
+/Amotherwithbabyson*.jpg
+/Youngbusinessmanwalking*.jpg
+/Landing_Page.png
+/Global Rescue logo_black and red 728 x 90.png
+/Global Rescue Brand Guidlines.pdf
+
+# Scratch
+*.log
+/landing-page.html
+/landing_page_code.txt
