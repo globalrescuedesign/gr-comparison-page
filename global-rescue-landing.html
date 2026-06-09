@@ -405,16 +405,32 @@ sup.cite a:hover { text-decoration: underline; }
 .cta-disclaimer { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 8px; max-width: 240px; }
 
 /* FOOTER */
-.site-footer { background: #1a1719; color: rgba(255,255,255,0.65); padding: 36px 0 22px; font-size: 13px; line-height: 1.6; }
-.site-footer .container { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; }
-.footer-tag { font-family: 'Roboto Condensed', sans-serif; color: white; font-size: 16px; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px; }
-.site-footer p { margin: 0 0 10px 0; font-size: 12.5px; line-height: 1.55; }
-.site-footer h5 { font-family: 'Roboto Condensed', sans-serif; color: white; text-transform: uppercase; letter-spacing: 1.2px; font-size: 12px; margin: 0 0 10px 0; font-weight: 700; }
-.site-footer ul { list-style: none; padding: 0; margin: 0; }
-.site-footer ul li { margin-bottom: 4px; }
-.site-footer ul a { color: rgba(255,255,255,0.7); font-size: 13px; }
-.site-footer ul a:hover { color: white; }
-.footer-legal { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 24px; padding-top: 16px; font-size: 11.5px; color: rgba(255,255,255,0.5); line-height: 1.55; }
+.site-footer { background: #1a1719; color: rgba(255,255,255,0.75); padding: 48px 0 24px; font-size: 14px; line-height: 1.6; }
+.site-footer .container { display: block; }
+.site-footer hr { border: 0; border-top: 1px solid rgba(255,255,255,0.14); margin: 28px 0; }
+.footer-newsletter { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 24px; align-items: center; }
+.footer-newsletter h3 { font-family: 'Roboto Condensed', sans-serif; color: white; text-transform: uppercase; font-size: 18px; font-weight: 400; letter-spacing: 1.2px; margin: 0; line-height: 1.3; }
+.footer-newsletter h3 strong { font-weight: 700; display: block; }
+.footer-newsletter input[type="email"] { width: 100%; padding: 12px 14px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06); color: white; border-radius: 4px; font-size: 14px; }
+.footer-newsletter input[type="email"]::placeholder { color: rgba(255,255,255,0.5); }
+.footer-newsletter .btn-subscribe { width: 100%; background: var(--red); color: white; border: none; padding: 12px 16px; font-family: 'Roboto Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; cursor: pointer; transition: background 0.15s; }
+.footer-newsletter .btn-subscribe:hover { background: #c50f1f; }
+.footer-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.footer-logos img { max-height: 60px; }
+.footer-logos .gr-logo { max-width: 260px; height: auto; }
+.footer-cols { display: grid; grid-template-columns: 1.2fr 1fr 0.8fr 1.3fr; gap: 36px; }
+.site-footer h4 { font-family: 'Roboto Condensed', sans-serif; color: white; text-transform: uppercase; letter-spacing: 1.2px; font-size: 13px; margin: 0 0 16px 0; font-weight: 700; }
+.site-footer p { margin: 0 0 10px 0; font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,0.78); }
+.site-footer ul { list-style: none; padding: 0; margin: 0 0 16px 0; }
+.site-footer ul li { margin-bottom: 8px; }
+.site-footer ul a, .site-footer ul button { color: rgba(255,255,255,0.78); font-size: 14px; background: none; border: none; padding: 0; font-family: inherit; cursor: pointer; text-align: left; }
+.site-footer ul a:hover, .site-footer ul button:hover { color: white; text-decoration: underline; }
+.footer-social { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin: 0 0 28px 0; padding: 0; list-style: none; }
+.footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; }
+.footer-social img { width: 24px; height: 24px; }
+.footer-official { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 24px; align-items: center; }
+.footer-official img { max-width: 100%; max-height: 40px; height: auto; filter: brightness(0) invert(1); opacity: 0.85; }
+.footer-copyright { text-align: right; font-size: 12.5px; color: rgba(255,255,255,0.55); text-transform: lowercase; letter-spacing: 0.3px; margin: 0; }
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
@@ -427,7 +443,8 @@ sup.cite a:hover { text-decoration: underline; }
   .toc.is-open .toc-toggle-icon { transform: rotate(180deg); }
   .competitor-wins, .profile-grid, .card-grid { grid-template-columns: repeat(2, 1fr); }
   .methodology-band .container { grid-template-columns: 1fr; gap: 16px; }
-  .site-footer .container { grid-template-columns: 1fr 1fr; }
+  .footer-cols { grid-template-columns: 1fr 1fr; }
+  .footer-newsletter { grid-template-columns: 1fr; gap: 14px; }
 }
 @media (max-width: 768px) {
   .main-nav { display: none; }
@@ -435,7 +452,9 @@ sup.cite a:hover { text-decoration: underline; }
   .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
   .hero h1 { font-size: 32px; }
   .cta-banner .container { flex-direction: column; align-items: flex-start; }
-  .site-footer .container { grid-template-columns: 1fr; }
+  .footer-cols { grid-template-columns: 1fr; gap: 28px; }
+  .footer-logos { justify-content: center; }
+  .footer-copyright { text-align: center; }
 }
 @media (max-width: 480px) {
   .hero-content { padding: 44px 0; }
@@ -448,11 +467,11 @@ sup.cite a:hover { text-decoration: underline; }
 
 <header class="site-header">
   <div class="container">
-    <a href="#top" class="logo" aria-label="Global Rescue home">
+    <a href="https://globalrescue.com" class="logo" aria-label="Global Rescue home">
       <img src="assets/img/logo.png" alt="Global Rescue" width="728" height="90">
     </a>
     <nav class="main-nav" aria-label="Main navigation">
-      <a href="https://www.globalrescue.com/about-us/">Why Global Rescue</a>
+      <a href="#winners">Why Global Rescue</a>
       <a href="https://www.globalrescue.com/personal/travelservices/">Membership</a>
       <a href="https://www.globalrescue.com/enterprise/">Solutions</a>
       <a href="https://www.globalrescue.com/common/blog/">Resources</a>
@@ -468,12 +487,12 @@ sup.cite a:hover { text-decoration: underline; }
   <div class="container">
     <div class="hero-content">
       <div class="hero-eyebrow">Comparison · Updated May 2026</div>
-      <h1>The Best Travel Insurance for Rescue and Medical Evacuation</h1>
-      <p class="hero-body">Compare 16 providers offering emergency rescue, medical evacuation, security extraction, and global travel protection — reviewed across 12 capability criteria with disclosed methodology.</p>
+      <h1>The Best Traveler Protection for Rescue and Medical Evacuation</h1>
+      <p class="hero-body">Compare 16 providers offering emergency rescue, medical evacuation, security extraction and global traveler protection — reviewed across 12 capability criteria with disclosed methodology.</p>
       <p class="hero-meta">By <strong>Bill McIntyre</strong>, Communications Director, Global Rescue · <a href="#methodology">View methodology</a> · <a href="#compare">Jump to comparison table</a></p>
       <div class="hero-actions">
         <a href="https://ss.globalrescue.com/#/signup/step1?source=grcom" class="btn btn-primary btn-lg">Join Global Rescue</a>
-        <a href="#providers" class="btn btn-outline">Read the Reviews</a>
+        <a href="#providers" class="btn btn-outline">Read the Assessments</a>
       </div>
     </div>
   </div>
@@ -488,7 +507,7 @@ sup.cite a:hover { text-decoration: underline; }
     </div>
     <div>
       <p>This comparison is published by <strong>Global Rescue</strong>, the company rated Best Overall in this analysis. We acknowledge a vested interest in this ranking. To maintain credibility we apply objective, publicly verifiable criteria to every provider equally — including ourselves. Where another provider genuinely leads a category (DAN for dive medicine, EA+ for senior simplicity, AirMed for ICU-level air transport, GeoBlue for international medical advisory, Seven Corners for insurance pricing flexibility), we say so explicitly in <a href="#when-competitors-win">Where competitors win</a>.<sup class="cite"><a href="#cite-1" id="cite-1-back">[1]</a></sup></p>
-      <p>Each provider was evaluated across five essential service dimensions and seven supplementary criteria using publicly available service terms, industry publications, and direct service documentation. No provider paid for inclusion or placement.</p>
+      <p>Each provider was evaluated across five essential service dimensions and seven supplementary criteria using publicly available service terms, industry publications and direct service documentation. No provider paid for inclusion or placement.</p>
       <p class="criteria-list"><strong>Criteria evaluated:</strong> Field Rescue · Medical Evacuation · Repatriation · Medical Advisory · Security Extraction · Travel Advisory · Pricing Flexibility · Destination Intelligence · Pay/Claims Model · Security Advisory · High-Altitude Capability · Student Pricing</p>
     </div>
   </div>
@@ -502,7 +521,7 @@ sup.cite a:hover { text-decoration: underline; }
         <nav class="toc" aria-label="Table of contents">
           <div class="toc-header"><span>On this page</span><span class="toc-toggle-icon" aria-hidden="true">▾</span></div>
           <ul class="toc-list">
-            <li class="toc-item"><a href="#coverage"><span class="toc-num">01</span>What coverage includes</a></li>
+            <li class="toc-item"><a href="#coverage"><span class="toc-num">01</span>Included services</a></li>
             <li class="toc-item"><a href="#winners"><span class="toc-num">02</span>Category winners</a></li>
             <li class="toc-item"><a href="#compare"><span class="toc-num">03</span>Comparison tables</a></li>
             <li class="toc-item"><a href="#providers"><span class="toc-num">04</span>Provider reviews (16)</a></li>
@@ -528,67 +547,66 @@ sup.cite a:hover { text-decoration: underline; }
           <h2 class="featured-title">Compare. Decide. Travel Confidently.</h2>
           <p class="featured-sub">Jump to the comparison or use-case section most relevant to your trip.</p>
           <div class="card-grid">
-            <article class="card"><a href="#medjet" class="card-clickable"><div class="card-media brand-medjet"></div><div class="card-body"><h3 class="card-title">Best Alternatives to Medjet</h3><p class="card-desc">How Global Rescue compares to Medjet on evacuation, response time, and coverage.</p><span class="card-link">Jump to section</span></div></a></article>
+            <article class="card"><a href="#medjet" class="card-clickable"><div class="card-media brand-medjet"></div><div class="card-body"><h3 class="card-title">Best Alternatives to Medjet</h3><p class="card-desc">How Global Rescue compares to Medjet on evacuation, response time and coverage.</p><span class="card-link">Jump to section</span></div></a></article>
             <article class="card"><a href="#amex" class="card-clickable"><div class="card-media brand-amex"></div><div class="card-body"><h3 class="card-title">Global Rescue vs. AMEX</h3><p class="card-desc">How Global Rescue compares to American Express Premium Global Assist.</p><span class="card-link">Jump to section</span></div></a></article>
             <article class="card"><a href="#coverage" class="card-clickable"><div class="card-media photo-summit" role="img" aria-label="Traveler on a mountain ridge"></div><div class="card-body"><h3 class="card-title">The 5 Essentials for Traveler Protection</h3><p class="card-desc">The must-have services every traveler needs before they go.</p><span class="card-link">Jump to section</span></div></a></article>
-            <article class="card"><a href="#profile-families" class="card-clickable"><div class="card-media photo-family" role="img" aria-label="Family at the Grand Canyon"></div><div class="card-body"><h3 class="card-title">Best Protection for Families</h3><p class="card-desc">Coverage that keeps every family member protected — wherever you go.</p><span class="card-link">Jump to section</span></div></a></article>
-            <article class="card"><a href="#profile-business" class="card-clickable"><div class="card-media photo-airport" role="img" aria-label="Business traveler in an airport"></div><div class="card-body"><h3 class="card-title">Best Protection for Business Travelers</h3><p class="card-desc">Solutions for frequent travel, international trips, and high-risk destinations.</p><span class="card-link">Jump to section</span></div></a></article>
-            <article class="card"><a href="#profile-longterm" class="card-clickable"><div class="card-media photo-city" role="img" aria-label="Long-term traveler abroad"></div><div class="card-body"><h3 class="card-title">Best Protection for Long-Term Travelers</h3><p class="card-desc">For students, expats, digital nomads, and extended adventures.</p><span class="card-link">Jump to section</span></div></a></article>
+            <article class="card"><a href="#profile-families" class="card-clickable"><div class="card-media photo-family" role="img" aria-label="Family at the Grand Canyon"></div><div class="card-body"><h3 class="card-title">Best Protection for Families</h3><p class="card-desc">Protection that keeps every family member protected — wherever you go.</p><span class="card-link">Jump to section</span></div></a></article>
+            <article class="card"><a href="#profile-business" class="card-clickable"><div class="card-media photo-airport" role="img" aria-label="Business traveler in an airport"></div><div class="card-body"><h3 class="card-title">Best Protection for Business Travelers</h3><p class="card-desc">Solutions for frequent travel, international trips and high-risk destinations.</p><span class="card-link">Jump to section</span></div></a></article>
+            <article class="card"><a href="#profile-longterm" class="card-clickable"><div class="card-media photo-city" role="img" aria-label="Long-term traveler abroad"></div><div class="card-body"><h3 class="card-title">Best Protection for Long-Term Travelers</h3><p class="card-desc">For students, expats, digital nomads and extended adventures.</p><span class="card-link">Jump to section</span></div></a></article>
           </div>
         </section>
 
         <section id="coverage">
           <div class="section-eyebrow">Section 01</div>
-          <h2>What Medical Evacuation &amp; Rescue Coverage Includes</h2>
-          <p>Not all "evacuation coverage" is the same. Understanding the difference between these core service types is essential before comparing providers — and especially before you need to use one.</p>
+          <h2>What Medical Evacuation &amp; Rescue Protection Includes</h2>
+          <p>Not all "evacuation services" are the same. Understanding the difference among these core service types is essential before comparing providers — and especially before you need to use one.</p>
 
           <h3>Field rescue / extraction</h3>
-          <p>Trained personnel — paramedics, military special operations veterans, or technical rescue teams — are dispatched to your actual location before any hospital or clinic is involved. This applies in remote wilderness, at altitude, at sea, or in conflict zones. Very few providers offer true field rescue. Most begin services only after you have reached a medical facility.<sup class="cite"><a href="#cite-2" id="cite-2-back">[2]</a></sup></p>
+          <p>Trained personnel — paramedics, military special operations veterans or technical rescue teams — are dispatched to your location before any hospital or clinic is involved. This applies nearly everywhere, urban or rural, whether in remote areas, the backcountry, at altitude, at sea or in conflict zones. Very few providers provide field rescue from the point of illness or injury. Most begin services only after you have reached a medical facility.<sup class="cite"><a href="#cite-2" id="cite-2-back">[2]</a></sup></p>
 
           <h3>Medical evacuation (medevac)</h3>
-          <p>Coordinated transport — by air ambulance, commercial flight with medical escort, or ground ambulance — from a medical facility to a higher-level care center or your home country. Most providers define medevac as beginning once you are admitted to a local hospital. Uninsured evacuations cost between $25,000 and $300,000 depending on location and aircraft type.<sup class="cite"><a href="#cite-29" id="cite-29-back">[29]</a></sup></p>
+          <p>Coordinated transport — by air, ground or sea, with medical escort as needed — from a medical facility to a higher-level care center or your home country. Most providers define medevac as beginning once you are admitted to a local hospital. Uninsured evacuations cost between $25,000 and $300,000 depending on location and transport type.<sup class="cite"><a href="#cite-29" id="cite-29-back">[29]</a></sup></p>
 
           <h3>Nearest hospital vs. hospital of choice</h3>
-          <p>"Nearest hospital" transport means you will be stabilized locally, potentially remaining abroad. "Hospital of choice" means your provider guarantees to move you to a specific hospital you select — typically in your home country — allowing continuity of care with your own physicians. Global Rescue (with upgrade), Medjet, AirMed, and SkyMed offer hospital-of-choice transport.<sup class="cite"><a href="#cite-12" id="cite-12-back">[12]</a></sup></p>
+          <p>"Nearest hospital" transport means you will be stabilized locally, potentially remaining abroad. "Hospital of choice" means your provider guarantees to move you to a specific hospital you select — typically in your home country — allowing continuity of care with your own physicians. Global Rescue, Medjet, AirMed, and SkyMed offer hospital-of-choice transport.<sup class="cite"><a href="#cite-12" id="cite-12-back">[12]</a></sup></p>
 
           <h3>Repatriation (medical &amp; non-medical)</h3>
-          <p>The return of a member to their home country. Medical repatriation applies when you require ongoing care. Non-medical repatriation covers return following security events, natural disasters, civil unrest, or the death of a travel companion. Most insurance-based providers cover medical repatriation only. Global Rescue covers both medical and non-medical events, including security-triggered departures.</p>
+          <p>The return of an individual to their home country. Medical repatriation applies when you require ongoing medical care. Non-medical repatriation returns individuals following security events, unpredictable natural disasters, civil unrest, or the outbreak of violent conflict or war. Most insurance-based providers cover medical repatriation only. Global Rescue provides both medical and non-medical events, including security-triggered departures.</p>
 
           <h3>Membership vs. insurance vs. credit card</h3>
-          <p><strong>Rescue &amp; evacuation memberships</strong> (Global Rescue, Medjet, AirMed) send personnel to your location, do not require claims, deductibles, or co-pays, and can begin services before or without hospitalization. They do not reimburse trip costs or medical bills.</p>
-          <p><strong>Travel insurance</strong> (Seven Corners, WorldTrips, Travelex, Travel Guard) reimburses trip cancellation, medical bills, and lost luggage. Evacuation coverage is amount-capped. Claims and documentation are required. Deductibles and co-pays typically apply. Personnel are not dispatched to you.</p>
+          <p><strong>Rescue &amp; evacuation memberships</strong> (Global Rescue, Medjet, AirMed) do not require claim forms, deductibles or co-pays, and can begin services before or without hospitalization. They do not reimburse trip costs or medical bills.</p>
+          <p><strong>Travel insurance</strong> (Seven Corners, WorldTrips, Travelex, Travel Guard) reimburses trip cancellation, medical bills and lost luggage. Evacuation coverage is amount-capped. Claims and documentation are required. Deductibles and co-pays typically apply. Personnel are not dispatched to you.</p>
           <p><strong>Credit card benefits</strong> (AMEX Platinum, Chase Sapphire Reserve, Capital One Venture X) are bundled with annual fees. Evacuation coverage is conditional and approval-based. You may need to pay upfront then file for reimbursement. Coverage limits are typically $100,000 or less. No field rescue. No security extraction.<sup class="cite"><a href="#cite-26" id="cite-26-back">[26]</a></sup></p>
 
           <h3>Common exclusions</h3>
-          <p>Pre-existing medical conditions (varies by plan) · active war zones or declared conflict areas · extreme sports without an add-on · high-altitude rescue above 15,000 ft without an altitude add-on · injuries related to alcohol or substance use · self-inflicted injuries · mental health crises (most insurance plans) · travel against official government advisories · destinations under active travel bans · members over 85 (transport restrictions).</p>
+          <p>Pre-existing medical conditions (vary by provider) · active war zones or declared conflict areas · extreme sports without an add-on · high-altitude rescue above 15,000 ft without an altitude add-on · injuries related to alcohol or substance use · self-inflicted injuries · mental health crises (most insurance plans) · travel against official government advisories · destinations under active travel bans.</p>
         </section>
 
         <section id="winners">
           <div class="section-eyebrow">Section 02</div>
           <h2>Category Winners at a Glance</h2>
-          <p>We evaluated 16 providers across 12 capability criteria. The categories below reflect each provider's strongest use case — not a single composite score. A provider that excels at hospital-to-hospital air transport may be the wrong choice for someone trekking in Nepal.</p>
+          <p>We evaluated 16 providers across 12 capability criteria. The categories below reflect each provider's strongest use case — not a single composite score. For example, a provider that excels at hospital-to-hospital air transport may be the wrong choice for someone trekking in Nepal.</p>
 
           <h3>Overall &amp; Pricing</h3>
           <ul>
             <li><strong>Best Overall:</strong> Global Rescue — the only provider in this comparison delivering all 5 essential services with a direct, no-claims, in-field response model. Essential Service Capability Score: 5/5.</li>
             <li><strong>Runner-Up Overall:</strong> Medjet — strong medical transport and repatriation with simple, no-claims service. Limited to post-hospitalization care.</li>
-            <li><strong>Best Price with Full Coverage:</strong> Global Rescue — starting at ~$139 (7-day). Only provider delivering all 5 essential services at any price point.<sup class="cite"><a href="#cite-5" id="cite-5-back">[5]</a></sup></li>
+            <li><strong>Best Price with Full Protection:</strong> Global Rescue — starting at ~$139 (7-day). Only provider delivering all 5 essential services at any price point.<sup class="cite"><a href="#cite-5" id="cite-5-back">[5]</a></sup></li>
             <li><strong>Lowest Annual Cost:</strong> EA+ (~$229/year). Limited to post-hospitalization medevac and repatriation. 2 of 5 essential services.<sup class="cite"><a href="#cite-16" id="cite-16-back">[16]</a></sup></li>
             <li><strong>Lowest Short-Term Cost:</strong> Medjet (~$99 short-term). 3 of 5 essential services. Begins only after hospitalization.<sup class="cite"><a href="#cite-13" id="cite-13-back">[13]</a></sup></li>
-            <li><strong>Most Flexible Pricing:</strong> Global Rescue — 7-day, 14-day, 30-day, annual, and multi-year options for individuals, families, students, and enterprise.</li>
-            <li><strong>Runner-Up Flexible Pricing:</strong> Seven Corners — single-trip, annual multi-trip, long-term, student, expat.</li>
+            <li><strong>Most Flexible Pricing:</strong> Global Rescue — 7-day, 14-day, 30-day, annual, and multi-year options for individuals, families, students and enterprise.</li>
           </ul>
 
           <h3>Credit Cards</h3>
           <ul>
-            <li><strong>Best Credit Card:</strong> AMEX Platinum — most capable card option with direct coordination potential via the Premium Global Assist Hotline. Still conditional and approval-based.<sup class="cite"><a href="#cite-26" id="cite-26-back-2">[26]</a></sup></li>
+            <li><strong>Best Credit Card:</strong> AMEX Platinum — most capable card option with direct coordination potential via the Premium Global Assist Hotline. Coverage is conditional, approval-based and depends on medical necessity, proper authorization and strict adherence to the rules.<sup class="cite"><a href="#cite-26" id="cite-26-back-2">[26]</a></sup></li>
             <li><strong>Runner-Up Credit Card:</strong> Chase Sapphire Reserve — up to $100,000 in evacuation coverage. More restrictive — often reimbursement-based and facility-to-facility only.<sup class="cite"><a href="#cite-27" id="cite-27-back">[27]</a></sup></li>
           </ul>
 
           <h3>Use-Case Winners</h3>
           <ul>
             <li><strong>Best for Scuba Divers:</strong> DAN TravelAssist — the only provider built around dive medicine. 24/7 dive medicine specialists, global hyperbaric chamber network.<sup class="cite"><a href="#cite-17" id="cite-17-back">[17]</a></sup></li>
-            <li><strong>Runner-Up Scuba:</strong> Global Rescue — broader field rescue and evacuation capability for divers in remote locations. Lacks DAN's dive-specific medical expertise.</li>
+            <li><strong>Runner-Up Scuba:</strong> Global Rescue — broader field rescue and evacuation capability for divers in remote locations.</li>
             <li><strong>Best Medical Advisory:</strong> Global Rescue — 24/7 access to on-staff physicians. Real-time guidance, referrals to vetted language-compatible facilities worldwide.</li>
             <li><strong>Runner-Up Medical Advisory:</strong> GeoBlue — strong curated global provider network. Advisory not always in-house physicians; depth varies by plan.<sup class="cite"><a href="#cite-18" id="cite-18-back">[18]</a></sup></li>
             <li><strong>Best Travel Advisory:</strong> Global Rescue — real-time, location-specific intelligence on health, weather, and security risks at city-level granularity.</li>
@@ -596,7 +614,6 @@ sup.cite a:hover { text-decoration: underline; }
             <li><strong>Best Security Extraction:</strong> Global Rescue — the only provider with true in-field extraction from active security threats — supported by dedicated in-house security and intelligence teams.</li>
             <li><strong>Best High-Altitude Evacuation:</strong> Global Rescue — technical field rescue above 15,000 feet in extreme environments (Himalayas, Andes, Denali). No comparable runner-up exists.<sup class="cite"><a href="#cite-6" id="cite-6-back">[6]</a></sup></li>
             <li><strong>Best for Seniors:</strong> EA+ — ~$229/year, no-claims model, no age limits, straightforward benefits. Limited to medevac and repatriation.</li>
-            <li><strong>Runner-Up Seniors:</strong> Medjet — similar simplicity, hospital-of-choice transport. Begins after hospitalization 150+ miles from home.</li>
             <li><strong>Best Hospital-to-Hospital Transport:</strong> AirMed International — owns its fleet of medically equipped aircraft. ICU-level care in transit.<sup class="cite"><a href="#cite-14" id="cite-14-back">[14]</a></sup></li>
             <li><strong>Best for Students:</strong> Global Rescue — dedicated student memberships for full-time students under 35. Durations 45–365 days. All 5 essential services.<sup class="cite"><a href="#cite-7" id="cite-7-back">[7]</a></sup></li>
             <li><strong>Runner-Up Students:</strong> WorldTrips (Atlas Travel) — affordable, flexible study abroad plans. Reimbursement-based. Lacks field rescue and security capabilities.<sup class="cite"><a href="#cite-23" id="cite-23-back">[23]</a></sup></li>
@@ -707,19 +724,19 @@ sup.cite a:hover { text-decoration: underline; }
               <h3>Global Rescue<span class="provider-badge">Best Overall</span></h3>
               <div class="provider-score">Essential Services <strong>5 / 5</strong></div>
             </div>
-            <p class="provider-verdict">The only provider in this comparison delivering field rescue, medevac, repatriation, medical advisory, and security extraction as a single, direct, no-claims service.</p>
-            <p>Global Rescue is the only provider in this comparison that deploys personnel to the point of injury — before a hospital is involved. That distinction matters most when you are injured in a remote area without reliable transport to a clinic.<sup class="cite"><a href="#cite-2" id="cite-2-back-2">[2]</a></sup></p>
-            <p>Field rescue is conducted by teams that include in-house paramedics and Special Operations–trained personnel. Medical evacuation is not dependent on hospitalization and can begin in the field. The service model is direct: no claims to file, no upfront costs, no insurance adjuster to satisfy before a helicopter is dispatched.</p>
-            <p>Medical advisory is available 24/7 through on-staff physicians who provide real-time guidance, treatment recommendations, and referrals to vetted facilities — including language-compatible providers in 215 countries. Travel intelligence covers health, weather, and security risks at city-level granularity, delivered via app, SMS, and email.</p>
-            <p>Security extraction covers in-field evacuation from terrorism, civil unrest, natural disasters, and political instability. Repatriation covers both medical and non-medical events, including return of mortal remains. The High-Altitude Evacuation Package (required above 15,000 feet) covers technical rescue in environments like the Himalayas, Andes, and Denali.<sup class="cite"><a href="#cite-6" id="cite-6-back-2">[6]</a></sup> Student memberships cover full-time students under 35 for 45 to 365 days with all five services included.<sup class="cite"><a href="#cite-7" id="cite-7-back-2">[7]</a></sup></p>
-            <p>Global Rescue was founded in 2004 in exclusive partnership with the Johns Hopkins Department of Emergency Medicine Division of Special Operations. The company employs more than 250 personnel across five operations centers in five countries and has performed more than 20,000 operations worldwide.<sup class="cite"><a href="#cite-1" id="cite-1-back-2">[1]</a></sup><sup class="cite"><a href="#cite-3" id="cite-3-back">[3]</a></sup><sup class="cite"><a href="#cite-4" id="cite-4-back">[4]</a></sup></p>
+            <p class="provider-verdict">The only provider in this comparison delivering field rescue, medevac, repatriation, medical advisory and security extraction as a single, direct, no-claims service.</p>
+            <p>Global Rescue is the only provider in this comparison that deploys personnel to the point of injury or illness — before a hospital is involved. That distinction matters most when you are injured or ill in a remote area without reliable transport to a clinic.<sup class="cite"><a href="#cite-2" id="cite-2-back-2">[2]</a></sup></p>
+            <p>Field rescue is conducted by teams that include in-house paramedics and former military Special Operations veterans. Medical evacuation is not dependent on hospitalization and can begin in the field. The service model is direct: no claims to file, no upfront costs, no insurance adjuster to satisfy before ground, air or marine rescue transport is dispatched.</p>
+            <p>Medical advisory is available 24/7 through on-staff medical professionals including physicians, nurses and emergency paramedics who provide real-time guidance, treatment recommendations and referrals to vetted facilities — including language-compatible providers in 215 countries. Travel intelligence covers health, weather and security risks at city-level granularity, delivered via app, SMS and email.</p>
+            <p>Security extraction protection includes in-field evacuation from terrorism, civil unrest, unpredicted natural disasters and political instability. Repatriation services include medical and non-medical events, including return of mortal remains. The High-Altitude Evacuation Package for travel above 15,000 feet during any part of a trip (excluding airplane travel) includes environments like the Himalayas, Andes and Denali.<sup class="cite"><a href="#cite-6" id="cite-6-back-2">[6]</a></sup> Student memberships protect full-time students under 35 for 45 to 365 days with all five essential services included.<sup class="cite"><a href="#cite-7" id="cite-7-back-2">[7]</a></sup></p>
+            <p>Global Rescue was founded in 2004 in exclusive partnership with the Johns Hopkins Department of Emergency Medicine Division of Special Operations. The company employs more than 200 personnel across five operations centers in four countries and has performed more than 25,000 operations worldwide.<sup class="cite"><a href="#cite-1" id="cite-1-back-2">[1]</a></sup><sup class="cite"><a href="#cite-3" id="cite-3-back">[3]</a></sup><sup class="cite"><a href="#cite-4" id="cite-4-back">[4]</a></sup></p>
             <dl class="provider-meta">
               <div><dt>Claims required</dt><dd>None</dd></div>
               <div><dt>Starting at</dt><dd>~$139 (7-day individual)</dd></div>
               <div><dt>Annual from</dt><dd>~$329 individual</dd></div>
               <div><dt>High-altitude add-on</dt><dd>From $495 (individual)</dd></div>
             </dl>
-            <div class="provider-best"><strong>Best for</strong>Adventure travelers, remote workers, students abroad, executives, families, organizations with duty-of-care obligations.</div>
+            <div class="provider-best"><strong>Best for</strong>Adventure travelers, traveling business employees, leisure and luxury travelers, remote workers, students abroad, executives, families, organizations with duty-of-care obligations.</div>
           </article>
 
           <article class="provider" id="airmed">
@@ -793,14 +810,14 @@ sup.cite a:hover { text-decoration: underline; }
               <div class="provider-score">Essential Services <strong>3.5 / 5</strong></div>
             </div>
             <p class="provider-verdict">The only provider built around dive medicine — global hyperbaric chamber network and 24/7 dive medicine specialists.</p>
-            <p>DAN's entire model is built around dive-specific risk, treatment, and evacuation. 24/7 access to medical professionals specializing in dive medicine, including decompression sickness, arterial gas embolism, and hyperbaric treatment. The global network of recompression chambers is unique in this comparison.<sup class="cite"><a href="#cite-17" id="cite-17-back-2">[17]</a></sup></p>
+            <p>DAN's entire model is built around dive-specific risk, treatment and evacuation. 24/7 access to medical professionals specializing in dive medicine, including decompression sickness, arterial gas embolism and hyperbaric treatment. The global network of recompression chambers is unique in this comparison.<sup class="cite"><a href="#cite-17" id="cite-17-back-2">[17]</a></sup></p>
             <p>DAN can coordinate evacuation from the point of injury if the member is reachable, but does not conduct technical search-and-rescue. Medical advisory outside dive medicine is more limited. Security evacuation is not offered.</p>
             <dl class="provider-meta">
               <div><dt>Claims required</dt><dd>None</dd></div>
               <div><dt>Pricing</dt><dd>Tiered annual, often bundled with dive insurance</dd></div>
               <div><dt>Specialty</dt><dd>Dive medicine, hyperbaric care</dd></div>
             </dl>
-            <div class="provider-best"><strong>Best for</strong>Scuba divers, freedivers, and marine researchers. Should be supplemented with a broader rescue membership for non-diving travel scenarios.</div>
+            <div class="provider-best"><strong>Best for</strong>Scuba divers, freedivers and marine researchers. Should be supplemented with a broader rescue membership for non-diving travel scenarios.</div>
           </article>
 
           <article class="provider" id="ea-plus">
@@ -810,7 +827,7 @@ sup.cite a:hover { text-decoration: underline; }
             </div>
             <p class="provider-verdict">Simple, no-claims medevac and repatriation at the lowest annual price point — and no age limits.</p>
             <p>EA+ provides medical evacuation and repatriation after hospitalization. No field rescue capability. The no-claims, direct-pay model at ~$229/year is among the most affordable annual options in this comparison. No age limits and no medical exam required — making it more accessible than many alternatives for older travelers.<sup class="cite"><a href="#cite-15" id="cite-15-back">[15]</a></sup><sup class="cite"><a href="#cite-16" id="cite-16-back-2">[16]</a></sup></p>
-            <p>Medical advisory is limited and coordination-based. No travel advisory, security evacuation, or destination intelligence.</p>
+            <p>Medical advisory is limited and coordination-based. No travel advisory, security evacuation or destination intelligence.</p>
             <dl class="provider-meta">
               <div><dt>Claims required</dt><dd>None</dd></div>
               <div><dt>Starting at</dt><dd>~$229 / year</dd></div>
@@ -841,14 +858,14 @@ sup.cite a:hover { text-decoration: underline; }
               <div class="provider-score">Essential Services <strong>2 / 5</strong></div>
             </div>
             <p class="provider-verdict">Premium air ambulance and security service for enterprise clients — direct-pay, but begins only after hospitalization.</p>
-            <p>Global Guardian provides air-ambulance evacuation once a member is hospitalized as an inpatient more than 150 miles from home. They arrange and pay for transport home or to a preferred hospital, with no out-of-pocket costs, claims, deductibles, or copays.<sup class="cite"><a href="#cite-24" id="cite-24-back">[24]</a></sup></p>
+            <p>Global Guardian provides air-ambulance evacuation once a member is hospitalized as an inpatient more than 150 miles from home. They arrange and pay for transport home or to a preferred hospital, with no out-of-pocket costs, claims, deductibles or copays.<sup class="cite"><a href="#cite-24" id="cite-24-back">[24]</a></sup></p>
             <p>No field rescue capability. Medical and travel advisory are limited. Security evacuation is coordinated rather than in-field extraction. Pricing is customized for enterprise clients.</p>
             <dl class="provider-meta">
               <div><dt>Claims required</dt><dd>None</dd></div>
               <div><dt>Pricing</dt><dd>Custom / not publicly listed</dd></div>
               <div><dt>Hospitalization required</dt><dd>Yes (150+ miles from home)</dd></div>
             </dl>
-            <div class="provider-best"><strong>Best for</strong>Corporate clients and high-net-worth individuals who want premium, customized service and are less price-sensitive.</div>
+            <div class="provider-best"><strong>Best for</strong>Corporate clients and high-net-worth individuals who want premium, customized service and are less price-sensitive. No field rescue from the point of injury or illness capability.</div>
           </article>
 
           <article class="provider" id="isos">
@@ -864,7 +881,7 @@ sup.cite a:hover { text-decoration: underline; }
               <div><dt>Pricing</dt><dd>Enterprise / institutional only</dd></div>
               <div><dt>Field rescue</dt><dd>Limited (reachable terrain only)</dd></div>
             </dl>
-            <div class="provider-best"><strong>Best for</strong>Large corporations, NGOs, and universities with significant international travel programs.</div>
+            <div class="provider-best"><strong>Best for</strong>Large corporations, NGOs and universities with significant international travel programs.</div>
           </article>
 
           <article class="provider" id="medjet">
@@ -904,9 +921,9 @@ sup.cite a:hover { text-decoration: underline; }
               <h3>SkyMed</h3>
               <div class="provider-score">Essential Services <strong>3 / 5</strong></div>
             </div>
-            <p class="provider-verdict">Regional hospital-to-home transport across North America — strong logistics, but no international reach and no field rescue.</p>
-            <p>SkyMed focuses on hospital-of-choice medical evacuation and return-home transport across the US, Canada, Mexico, Bermuda, and the Caribbean. The service transports members home once hospitalized more than a set distance from their residence.<sup class="cite"><a href="#cite-25" id="cite-25-back">[25]</a></sup></p>
-            <p>SkyMed is known for covering many logistical details that other providers leave to the traveler. Plans include individual, family, and long-term options, though pricing is not publicly standardized. Limitations include regional focus and no field rescue.</p>
+            <p class="provider-verdict">Regional hospital-to-home transport across North America — strong logistics, but extremely limited international reach and no field rescue.</p>
+            <p>SkyMed focuses on hospital-of-choice medical evacuation and return-home transport across the US, Canada, Mexico, Bermuda and the Caribbean. The service transports members home once hospitalized more than a set distance from their residence.<sup class="cite"><a href="#cite-25" id="cite-25-back">[25]</a></sup></p>
+            <p>SkyMed is known for covering many logistical details that other providers leave to the traveler. Plans include individual, family and long-term options, though pricing is not publicly standardized. Limitations include regional focus and no field rescue.</p>
             <dl class="provider-meta">
               <div><dt>Claims required</dt><dd>None</dd></div>
               <div><dt>Pricing</dt><dd>Not publicly listed</dd></div>
@@ -969,11 +986,11 @@ sup.cite a:hover { text-decoration: underline; }
           <div class="competitor-wins">
             <div class="win-card">
               <h3>When to choose EA+ over Global Rescue</h3>
-              <p>You are a senior traveler taking established, low-risk trips. You want a simple "get me home if I am hospitalized" guarantee at the lowest annual price. EA+ at ~$229/year has no age limits, no claims, and no medical exam — and you do not need field rescue, security extraction, or destination intelligence.</p>
+              <p>You are a senior traveler taking established, low-risk trips. You want a simple "get me home if I am hospitalized" guarantee at the lowest annual price. EA+ at ~$229/year has no age limits, no claims, and no medical exam — and you do not want field rescue, security extraction, or destination intelligence.</p>
             </div>
             <div class="win-card">
               <h3>When to choose DAN over Global Rescue</h3>
-              <p>You are primarily diving — recreational, technical, or as a marine professional. Dive-specific medical expertise, hyperbaric chamber coordination, and decompression treatment matter more than broad rescue. DAN is the only provider in this comparison built around dive medicine.</p>
+              <p>You are primarily diving — recreational, technical or as a marine professional. Dive-specific medical expertise, hyperbaric chamber coordination and decompression treatment matter more than broad rescue. DAN is the only provider in this comparison built around dive medicine.</p>
             </div>
             <div class="win-card">
               <h3>When to choose AirMed over Global Rescue</h3>
@@ -981,7 +998,7 @@ sup.cite a:hover { text-decoration: underline; }
             </div>
             <div class="win-card">
               <h3>When to choose Seven Corners over Global Rescue</h3>
-              <p>You need a single product to cover trip cancellation, lost luggage, medical bills, and basic medevac — and you want maximum flexibility on plan length and traveler type. Seven Corners offers the widest mix of single-trip, annual, long-term, student, and expat insurance plans.</p>
+              <p>You need a single product to cover trip cancellation, lost luggage, medical bills and basic medevac — and you want maximum flexibility on plan length and traveler type. Seven Corners offers the widest mix of single-trip, annual, long-term, student and expat insurance plans.</p>
             </div>
             <div class="win-card">
               <h3>When to choose GeoBlue over Global Rescue</h3>
@@ -989,7 +1006,7 @@ sup.cite a:hover { text-decoration: underline; }
             </div>
             <div class="win-card">
               <h3>When to choose International SOS over Global Rescue</h3>
-              <p>You are buying for a large organization — corporation, NGO, university — that needs enterprise-grade global medical and security infrastructure with on-the-ground presence in many countries, and you require a vendor whose entire model is built around institutional duty-of-care contracts.</p>
+              <p>You are buying for a large organization — corporation, NGO or university — that needs enterprise-grade global medical and security infrastructure with on-the-ground presence in many countries, and you require a vendor whose entire model is built around institutional duty-of-care contracts.</p>
             </div>
           </div>
         </section>
@@ -1034,7 +1051,7 @@ sup.cite a:hover { text-decoration: underline; }
             </ul>
           </div>
 
-          <p><strong>Verdict.</strong> Credit card benefits are conditional safety nets — not operational rescue services. None of these cards dispatches personnel to your location, provides security extraction, or offers dedicated physician access. For routine international travel to established destinations, card benefits supplement your protection. For adventure travel, remote destinations, or high-risk regions, a dedicated membership is necessary.</p>
+          <p><strong>Verdict.</strong> Credit card benefits are conditional safety nets — not operational rescue services. None of these cards dispatches personnel to your location, provides security extraction or offers dedicated physician access. For routine international travel to established destinations, card benefits supplement your protection. For adventure travel, remote destinations or high-risk regions, a dedicated membership is necessary.</p>
         </section>
 
         <section id="how-to-choose">
@@ -1077,7 +1094,7 @@ sup.cite a:hover { text-decoration: underline; }
             <div class="profile" id="profile-leisure">
               <h4>Occasional Leisure Traveler</h4>
               <p class="profile-sub">1–2 international trips/year, established destinations</p>
-              <p class="profile-rec">Short-term coverage + travel insurance. <strong>Global Rescue 7-day + Travel Insurance policy.</strong></p>
+              <p class="profile-rec">Short-term coverage + travel insurance. <strong>Global Rescue 7, 14 or 30-day + Travel Insurance policy.</strong></p>
             </div>
             <div class="profile" id="profile-organization">
               <h4>Organization / Duty of Care</h4>
@@ -1097,9 +1114,9 @@ sup.cite a:hover { text-decoration: underline; }
           </div>
 
           <h3>5 questions to ask before you buy</h3>
-          <p><strong>1. Will this provider send someone to me, or do I need to get to them first?</strong> This is the most critical question. Most providers begin services only once you have reached a medical facility. If you are injured in a remote area without reliable transport, that is a meaningful gap. Ask explicitly: does this provider deploy personnel to the point of injury?</p>
+          <p><strong>1. Will this provider send someone to me, or do I need to get to them first?</strong> This is the most critical question. Most providers begin services only once you have reached a medical facility. If you are injured in a remote area without reliable transport, that is a meaningful gap. Ask explicitly: does this provider deploy personnel to the point of injury or illness?</p>
           <p><strong>2. Do I need to file a claim or pay upfront?</strong> Direct-service providers (Global Rescue, Medjet, AirMed, EA+) arrange and cover costs without upfront payment or claims. Insurance-based providers require documentation and reimbursement after the fact. Know which model your plan uses before you need it.</p>
-          <p><strong>3. Does it cover my specific activity and destination?</strong> Extreme sports, high-altitude mountaineering, dive travel, and travel to high-risk regions all have different coverage implications. Verify your specific activities and destinations are covered in the service terms — not just assumed.</p>
+          <p><strong>3. Do service protections include my specific activity and destination?</strong> Extreme sports, high-altitude mountaineering, dive travel and travel to high-risk regions all have different coverage implications. verify your specific activities and destinations are included in the service terms — not just assumed.</p>
           <p><strong>4. Can I get home to my own hospital, or just the nearest one?</strong> Hospital-of-choice transport (Global Rescue, Medjet, AirMed) ensures continuity of care with your own physicians. Many plans cover transport to the nearest medically appropriate facility only. Confirm which applies.</p>
           <p><strong>5. What happens if my emergency is security-related, not medical?</strong> Most plans focus exclusively on medical emergencies. If you travel to regions with any elevated security risk, verify whether your provider includes security evacuation — and whether it is in-field extraction or a reimbursement benefit for defined events.</p>
         </section>
@@ -1112,33 +1129,33 @@ sup.cite a:hover { text-decoration: underline; }
           <div class="scenarios">
             <div class="scenario">
               <span class="scenario-label">Scenario · High Altitude</span>
-              <h4>Climber injured at 18,000 ft on Aconcagua</h4>
-              <p>A 42-year-old American climber sustains a femur fracture descending from Camp 2 on Aconcagua. She is two days from the nearest road. Her travel insurance considers the location inaccessible. Her credit card declines the request — extreme altitude is excluded.</p>
-              <p class="outcome"><strong>Outcome with Global Rescue + High-Altitude Package:</strong> field rescue teams coordinate with the local park authority and Argentine military. A helicopter extracts her to Mendoza within 18 hours. No claims filed.</p>
+              <h4>Kilimanjaro Climb Ends in Emergency</h4>
+              <p>While climbing Mount Kilimanjaro with his son, Georgia traveler Mike D. developed severe altitude sickness that rapidly progressed into high altitude pulmonary edema (HAPE). Unable to descend on foot, he contacted Global Rescue, which coordinated oxygen support, helicopter evacuation, hospitalization and family communications.</p>
+              <p class="outcome"><strong>Outcome with Global Rescue + High-Altitude Package:</strong> Global Rescue evacuated Mike by helicopter, coordinated hospital treatment for HAPE, kept his family informed and helped him recover and reunite with his son.</p>
             </div>
             <div class="scenario">
               <span class="scenario-label">Scenario · Security</span>
-              <h4>Civil unrest in capital city during business trip</h4>
-              <p>A consultant is in a regional capital when a coup attempt closes the airport and triggers curfew. Hotel power is intermittent. The US embassy advises shelter-in-place. His travel insurance covers trip interruption but offers no extraction. His credit card hotline can book commercial flights — none are flying.</p>
-              <p class="outcome"><strong>Outcome with Global Rescue Security Extraction:</strong> in-house intelligence team monitors the airport reopening window. A ground convoy moves him across the border to a stable neighboring country, then onward to his home country.</p>
+              <h4>Trapped in Israel Under Rocket Fire</h4>
+              <p>While visiting Jerusalem on October 7, Patrick and Sharon Ellis found themselves caught in the Hamas attack on Israel. As rocket sirens, missile interceptions and nearby explosions intensified, they turned to Global Rescue, which provided continuous security guidance, evacuation planning and coordinated their safe departure.</p>
+              <p class="outcome"><strong>Outcome with Global Rescue Security Extraction:</strong> Global Rescue arranged secure transport, obtained outbound flights and successfully extracted the couple from Israel, reuniting them safely with onward travel plans.</p>
             </div>
             <div class="scenario">
               <span class="scenario-label">Scenario · Hospital of Choice</span>
-              <h4>Senior cardiac event on a Mediterranean cruise</h4>
-              <p>A 71-year-old has a heart attack during a port stop in Sicily. He is stabilized at a local hospital. His family wants him transferred to his cardiologist in Boston. The local hospital is willing to discharge him to a medically appropriate facility.</p>
-              <p class="outcome"><strong>Outcome with EA+ or Medjet:</strong> the membership arranges and pays for air-ambulance transport from Sicily to Boston with no out-of-pocket cost. Travel insurance alone would have reimbursed costs only after months of paperwork.</p>
+              <h4>Motorcycle Crash Leads to Medevac</h4>
+              <p>A US traveler suffered a broken leg in a motorcycle accident in Morocco and underwent surgery at a local hospital. After reviewing his injuries, including concerns about head and spinal trauma, Global Rescue physicians recommended medical evacuation for continued specialized orthopedic care.</p>
+              <p class="outcome"><strong>Outcome with Global Rescue:</strong> Global Rescue arranged business-class medical transport with leg elevation and travel assistance, enabling the member to return safely to his home hospital in San Francisco.</p>
             </div>
             <div class="scenario">
               <span class="scenario-label">Scenario · Student Abroad</span>
-              <h4>Appendicitis during a semester in Buenos Aires</h4>
-              <p>A 20-year-old undergraduate develops appendicitis during a study-abroad term. She needs surgery, but her university wants confirmation the local facility meets clinical standards before authorizing care.</p>
-              <p class="outcome"><strong>Outcome with Global Rescue Student Membership:</strong> on-staff physicians review the local facility, confirm clinical adequacy, and stay engaged through surgery and recovery. With WorldTrips Atlas, the same care would have been authorized via her insurance plan with reimbursement filed afterward.</p>
+              <h4>Cardiac Scare in Marrakech</h4>
+              <p>A university student in Marrakech, Morocco, experienced severe cardiovascular symptoms, including a racing heartbeat, weakness and tingling that lasted more than 45 minutes. Global Rescue rapidly coordinated ambulance transport, hospital admission and medical oversight while working closely with university officials.</p>
+              <p class="outcome"><strong>Outcome with Global Rescue Student Membership:</strong> Global Rescue arranged emergency transport, coordinated care with local medical providers and university staff, and ensured the student received timely evaluation and treatment.</p>
             </div>
             <div class="scenario">
               <span class="scenario-label">Scenario · Non-Medical Repatriation</span>
-              <h4>Hurricane evacuation from the Caribbean</h4>
-              <p>A family of four is on a beach vacation in the Caribbean when a Category 4 hurricane forecast moves the island into the cone. Commercial flights are sold out. The local government issues a mandatory evacuation order.</p>
-              <p class="outcome"><strong>Outcome with Global Rescue:</strong> non-medical repatriation is a covered benefit. The family is moved to a safe location ahead of landfall and returned home. Most travel insurance and all credit cards cover medical repatriation only — not weather-driven departures.</p>
+              <h4>Rescues After Nepal Earthquake</h4>
+              <p>Following Nepal's devastating earthquake, Global Rescue mobilized rescue and evacuation operations for members and clients across the region. Teams on the ground coordinated intelligence, safety communications and air resources while deploying additional personnel to assist those affected by the disaster.</p>
+              <p class="outcome"><strong>Outcome with Global Rescue:</strong> Global Rescue expanded its response teams, coordinated evacuations and rescue missions, and provided critical support to members impacted by the earthquake and avalanche.</p>
             </div>
           </div>
         </section>
@@ -1149,11 +1166,11 @@ sup.cite a:hover { text-decoration: underline; }
 
           <details class="faq" open>
             <summary>What is the difference between travel insurance and a medical evacuation membership?</summary>
-            <div class="faq-body"><p>Travel insurance is a financial reimbursement product — it pays you back after a covered event, after you have filed a claim and provided documentation. A medical evacuation membership like Global Rescue is an operational service: it sends trained personnel to rescue you, coordinates evacuation, and transports you to the right hospital. No claims process, no deductibles, no prior authorization. Travel insurance requires you to reach a hospital before coverage activates. Global Rescue sends help from the point of injury or illness. The two products are complementary — most international travelers benefit from having both.</p></div>
+            <div class="faq-body"><p>Travel insurance is a financial reimbursement product, it pays you back after a covered event, after you have filed a claim and provided documentation. A medical evacuation membership like Global Rescue is an operational service: it sends trained personnel to rescue you, coordinates evacuation and transports you to the right hospital. No claims process, no deductibles and no prior authorization. Travel insurance requires you to reach a hospital before coverage activates. Global Rescue sends help to the point of injury or illness. The two products are complementary, most international travelers benefit from having both.</p></div>
           </details>
 
           <details class="faq">
-            <summary>Does Global Rescue cover rescue from a mountain or remote wilderness?</summary>
+            <summary>Does a Global Rescue membership include rescue from a mountain or remote wilderness?</summary>
             <div class="faq-body"><p>Yes. Global Rescue provides field rescue from the point of illness or injury, including remote wilderness and mountain environments. Standard memberships cover most remote environments. For rescues above 15,000 feet — Everest, Denali, Aconcagua — the High-Altitude Evacuation Package is required (starting at $495 for individuals). No other provider in this comparison offers comparable technical rescue capability at extreme altitude.</p></div>
           </details>
 
@@ -1164,7 +1181,7 @@ sup.cite a:hover { text-decoration: underline; }
 
           <details class="faq">
             <summary>How much does a medical evacuation cost without coverage?</summary>
-            <div class="faq-body"><p>An emergency medical evacuation by air ambulance can cost up to $300,000 depending on destination, aircraft type, and severity. A medevac helicopter costs approximately $60,000. Ground ambulance transport can run $5,000 or more for short distances in remote regions. A Global Rescue membership starting at $139 for a 7-day trip eliminates these costs for covered members. No claims, no deductibles, no upfront payment.</p></div>
+            <div class="faq-body"><p>An emergency medical evacuation by air ambulance can cost up to $300,000 depending on destination, aircraft type, and severity. A medevac helicopter costs approximately $60,000. Ground ambulance transport can run $5,000 or more for short distances in remote regions. A Global Rescue membership starting at $139 for a 7-day trip eliminates these costs for protected members. No claims, no deductibles, no upfront payment.</p></div>
           </details>
 
           <details class="faq">
@@ -1189,7 +1206,7 @@ sup.cite a:hover { text-decoration: underline; }
 
           <details class="faq">
             <summary>What is the difference between "nearest hospital" and "hospital of choice" transport?</summary>
-            <div class="faq-body"><p>"Nearest hospital" means you are stabilized locally — potentially remaining in a foreign healthcare system for your recovery. "Hospital of choice" means your provider transports you to a specific hospital you select, typically in your home country, allowing continuity of care with your own physicians. Global Rescue (with upgrade), Medjet, AirMed, and SkyMed all offer hospital-of-choice transport. Most insurance plans and credit card benefits cover only the nearest medically appropriate facility.</p></div>
+            <div class="faq-body"><p>"Nearest hospital" means you are stabilized locally — potentially remaining in a foreign healthcare system for your recovery. "Hospital of choice" means your provider transports you to a specific hospital you select, typically in your home country, allowing continuity of care with your own physicians. Global Rescue, Medjet, AirMed, and SkyMed all offer hospital-of-choice transport. Most insurance plans and credit card benefits cover only the nearest medically appropriate facility.</p></div>
           </details>
 
           <details class="faq">
@@ -1235,7 +1252,7 @@ sup.cite a:hover { text-decoration: underline; }
             <li id="cite-30">Industry reporting on helicopter medevac (~$60,000 typical). <a class="backref" href="#cite-30-back">↑</a></li>
             <li id="cite-31">Industry reporting on ground ambulance in remote regions ($5,000+). <a class="backref" href="#cite-31-back">↑</a></li>
           </ol>
-          <p class="table-legend">Note: source URLs marked here are scheduled to be replaced with Global Rescue's vetted citation set. Page authored by <strong>Bill McIntyre</strong>, Communications Manager, Global Rescue. Last verified May 2026.</p>
+          <p class="table-legend">Note: source URLs marked here are scheduled to be replaced with Global Rescue's vetted citation set. Page authored by <strong>Bill McIntyre</strong>, Director Communications, Global Rescue. Last verified May 2026.</p>
         </section>
 
       </div>
@@ -1289,31 +1306,80 @@ sup.cite a:hover { text-decoration: underline; }
   </div>
 </section>
 
-<footer class="site-footer">
+<footer class="site-footer" id="footer">
   <div class="container">
-    <div>
-      <div class="footer-tag">Helping People Travel Boldly Since 2004.</div>
-      <p>This comparison page is published by Global Rescue. While we have made every effort to represent competitors accurately based on publicly available service documentation, travelers should verify coverage details directly with each provider before purchasing. This page is not legal or insurance advice.</p>
-      <p class="footer-legal">© 2026 Global Rescue LLC. TotalCare℠, Travel Boldly℠, GRID℠, and Signature Travel Insurance are trademarks and/or include copyrights of Global Rescue LLC. Global Rescue LLC provides technical and administrative services to Elite Medical Group, P.C., a professional corporation owned by licensed physicians. Global Rescue is not an insurance company and cannot reimburse members for costs of medical treatment or trip expenses. All service terms are subject to the Member Services Agreement. Starting-from prices shown; actual pricing varies. For individuals 85+, medical transport is available on a fee-for-service basis.</p>
+
+    <form id="newsletter-form" class="footer-newsletter" novalidate>
+      <h3>Subscribe to our <strong>Newsletter</strong></h3>
+      <div>
+        <input type="email" name="email" maxlength="100" placeholder="Email Address" required>
+      </div>
+      <div>
+        <button type="submit" id="submit-grcom-newsletter-signup" class="btn-subscribe">Subscribe</button>
+      </div>
+    </form>
+
+    <hr>
+
+    <div class="footer-logos">
+      <img class="gr-logo" src="https://globalrescue.com/grcom/grmkt_resources/images/GR-Logos/Global-Rescue-Logo-WR.svg" alt="Global Rescue Logo">
+      <a class="bbb-logo" href="https://www.bbb.org/us/nh/lebanon/profile/risk-management/global-rescue-llc-0051-92044969" target="_blank" rel="noopener"><img src="https://globalrescue.com/grcom/images/common/icons/bbb_white.png" alt="BBB Accredited" width="150"></a>
+      <img src="https://globalrescue.com/grcom/grmkt_resources/images/icons/ISO-certified__Red.svg" alt="ISO Certified">
     </div>
-    <div>
-      <h5>Membership</h5>
-      <ul>
-        <li><a href="https://www.globalrescue.com/personal/travelservices/">Travel Services</a></li>
-        <li><a href="https://www.globalrescue.com/personal/travelservices/">Annual Plans</a></li>
-        <li><a href="https://www.globalrescue.com/lp/high-altitude-travel-evacuation/">High-Altitude Package</a></li>
-        <li><a href="https://www.globalrescue.com/enterprise/">Enterprise / Duty of Care</a></li>
-      </ul>
+
+    <hr>
+
+    <div class="footer-cols">
+      <div>
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="tel:+16174594200" title="Call Global Rescue at +1 (617) 459-4200">+1 (617) 459-4200</a></li>
+          <li><a href="https://www.globalrescue.com/contact/">Contact Us via Form</a></li>
+        </ul>
+        <p>85 Mechanic St,<br>Lebanon, NH 03766 USA</p>
+      </div>
+      <div>
+        <h4>Quick Access</h4>
+        <ul>
+          <li><a href="https://www.globalrescue.com/about-us/">About Us</a></li>
+          <li><a href="https://secure7.saashr.com/ta/6210167.careers?CareersSearch=&amp;lang=en-US" target="_blank" rel="noopener">Careers</a></li>
+          <li><a href="https://www.globalrescue.com/common/blog/">Blog</a></li>
+          <li><a href="https://www.globalrescue.com/partners/">Affiliate &amp; Partner Program</a></li>
+          <li><a href="https://www.globalrescue.com/common/travel-intelligence-center/">Travel Intelligence Center</a></li>
+          <li><a href="https://www.globalrescue.com/common/awards/">Awards</a></li>
+          <li><a href="https://www.globalrescue.com/mediakit/">Media Kit</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://www.globalrescue.com/landing-pages/disclaimer/">Disclaimer</a></li>
+          <li><a href="https://www.globalrescue.com/landing-pages/legal-matters/">Legal Matters</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <ul class="footer-social">
+          <li><a href="https://www.facebook.com/myglobalrescue" target="_blank" rel="noopener" title="Global Rescue on Facebook"><img src="https://globalrescue.com/grcom/grmkt_resources/images/icons/fb.svg" alt="Facebook"></a></li>
+          <li><a href="https://twitter.com/GlobalRescue" target="_blank" rel="noopener" title="Global Rescue on Twitter"><img src="https://globalrescue.com/grcom/grmkt_resources/images/icons/twitter.svg" alt="Twitter"></a></li>
+          <li><a href="https://www.linkedin.com/company/globalrescue-llc" target="_blank" rel="noopener" title="Global Rescue on LinkedIn"><img src="https://www.globalrescue.com/grcom/grmkt_resources/images/icons/linkedin.svg" alt="LinkedIn"></a></li>
+          <li><a href="https://www.instagram.com/global_rescue/" target="_blank" rel="noopener" title="Global Rescue on Instagram"><img src="https://globalrescue.com/grcom/grmkt_resources/images/icons/insta.svg" alt="Instagram"></a></li>
+          <li><a href="https://www.youtube.com/@GlobalRescue" target="_blank" rel="noopener" title="Global Rescue on YouTube"><img src="https://globalrescue.com/grcom/grmkt_resources/images/icons/yt.svg" alt="YouTube"></a></li>
+        </ul>
+        <h4>Official Provider</h4>
+        <div class="footer-official">
+          <img src="https://www.globalrescue.com/grcom/grmkt_resources/images/clients/2560px-NASA_Worm_logo.svg" alt="NASA">
+          <img src="https://www.globalrescue.com/grcom/grmkt_resources/images/clients/united-states-postal-service-3-logo-png-transparent.svg" alt="USPS">
+          <img src="https://www.globalrescue.com/grcom/grmkt_resources/images/clients/us-ski-and-snowboard-vector-logo.svg" alt="US Ski &amp; Snowboard">
+          <img src="https://globalrescue.com/grcom/grmkt_resources/images/clients/lpga.svg" alt="LPGA">
+        </div>
+      </div>
     </div>
-    <div>
-      <h5>Company</h5>
-      <ul>
-        <li><a href="https://www.globalrescue.com/about-us/">About Us</a></li>
-        <li><a href="https://www.globalrescue.com/common/blog/">Blog &amp; Resources</a></li>
-        <li><a href="https://www.globalrescue.com/contact/">Contact</a></li>
-        <li><a href="tel:+18003819754">(800) 381-9754</a></li>
-      </ul>
-    </div>
+
+    <hr>
+
+    <p class="footer-copyright">©2026 global rescue llc. all rights reserved.</p>
+
   </div>
 </footer>
 
