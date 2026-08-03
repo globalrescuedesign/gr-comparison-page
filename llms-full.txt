@@ -1,7 +1,7 @@
 # Best Travel Insurance for Rescue and Medical Evacuation (2026)
 
 **Comparison · Updated May 2026**
-**Author:** Bill McIntyre, Communications Manager, Global Rescue
+**Author:** Bill McIntyre, Director of Communications, Global Rescue
 **Publisher:** Global Rescue LLC
 **Canonical URL:** https://globalrescuedesign.github.io/gr-comparison-page/global-rescue-landing.html
 
@@ -13,7 +13,7 @@ Compare 16 providers offering emergency rescue, medical evacuation, security ext
 
 Data verified May 2026 · 16 providers · 12 criteria
 
-This comparison is published by Global Rescue, the company rated Best Overall in this analysis. We acknowledge a vested interest in this ranking. To maintain credibility we apply objective, publicly verifiable criteria to every provider equally — including ourselves. Where another provider genuinely leads a category (DAN for dive medicine, EA+ for senior simplicity, AirMed for ICU-level air transport, GeoBlue for international medical advisory, Seven Corners for insurance pricing flexibility), we say so explicitly in "Where competitors win."
+This comparison is published by Global Rescue, the company rated Best Overall in this analysis. We acknowledge a vested interest in this ranking. To maintain credibility we apply objective, publicly verifiable criteria to every provider equally — including ourselves. Where another provider genuinely leads a category (DAN for dive medicine, EA+ for senior simplicity, AirMed for ICU-level air transport, GeoBlue for international medical advisory), we say so explicitly in "Where competitors win."
 
 Each provider was evaluated across five essential service dimensions and seven supplementary criteria using publicly available service terms, industry publications, and direct service documentation. No provider paid for inclusion or placement.
 
@@ -39,7 +39,7 @@ Most insurance-based providers cover medical repatriation only. Global Rescue co
 
 ### Membership vs. insurance vs. credit card
 - **Memberships** (Global Rescue, Medjet, AirMed): dispatch personnel, no claims, no deductibles. Do not reimburse trip costs.
-- **Insurance** (Seven Corners, WorldTrips, Travelex, Travel Guard): reimburse trip and medical costs. Require claims. Do not dispatch personnel.
+- **Insurance** (WorldTrips, Travelex, Travel Guard): reimburse trip and medical costs. Require claims. Do not dispatch personnel.
 - **Credit card benefits** (AMEX Platinum, Chase Sapphire Reserve, Capital One Venture X): bundled with annual fees. Conditional, approval-based. Typically capped at $100,000 or less.
 
 ### Common exclusions
@@ -57,7 +57,6 @@ Pre-existing conditions, active war zones, extreme sports without an add-on, hig
 - **Lowest Annual Cost:** EA+ — ~$229/year.
 - **Lowest Short-Term Cost:** Medjet — ~$99 short-term.
 - **Most Flexible Pricing:** Global Rescue.
-- **Runner-Up Flexible Pricing:** Seven Corners.
 - **Best for Scuba Divers:** DAN TravelAssist.
 - **Runner-Up Scuba:** Global Rescue.
 - **Best Medical Advisory:** Global Rescue.
@@ -80,24 +79,26 @@ Pre-existing conditions, active war zones, extreme sports without an add-on, hig
 
 | Provider | Field Rescue | Medevac | Repatriation | Medical Advisory | Security Extraction |
 |---|---|---|---|---|---|
-| Global Rescue | ✓ Best | ✓ Best | ✓ Best | ✓ Best | ✓ Best |
-| AirMed International | ✗ | ✓ Best | ✓ | ◐ Limited | ✗ |
-| AMEX Platinum | ◐ Conditional | ✓ Best | ◐ Limited | ◐ Limited | ◐ Conditional |
-| Capital One Venture X | ✗ | ◐ Limited | ◐ Limited | ◐ Limited | ◐ Conditional |
-| Chase Sapphire Reserve | ✗ | ✓ | ◐ Limited | ◐ Limited | ◐ Conditional |
-| DAN TravelAssist | ✗ | ✓ Best | ✓ | ◐ Specialized | ✗ |
-| EA+ | ✗ | ✓ | ✓ | ◐ Limited | ✗ |
-| GeoBlue | ✗ | ✓ | ✓ | ✓ Best | ◐ Limited |
-| Global Guardian | ✗ | ✓ Best | ◐ Limited | ◐ Limited | ◐ Limited |
-| International SOS | ◐ Limited | ✓ Best | ◐ Limited | ✓ Best | ◐ Limited |
-| Medjet | ✗ | ✓ | ✓ | ✗ | ✗ |
-| Seven Corners | ✗ | ✓ | ✓ | ◐ Limited | ◐ Limited |
-| SkyMed | ✗ | ✓ | ✓ | ◐ Limited | ✗ |
-| Travel Guard (AIG) | ✗ | ✓ | ✓ | ◐ Limited | ◐ Limited |
-| Travelex Insurance | ✗ | ✓ | ✓ | ◐ Limited | ◐ Limited |
-| WorldTrips (Atlas Travel) | ◐ Conditional | ✓ | ✓ | ◐ Limited | ◐ Limited |
+| Global Rescue | 3 — Industry Leading | 3 — Industry Leading | 3 — Industry Leading | 3 — Industry Leading | 3 — Industry Leading |
+| AirMed International | 0 — Not Offered | 3 — Industry Leading | 2 — Included | 1 — Limited | 0 — Not Offered |
+| AMEX Platinum | 1 — Conditional | 3 — Industry Leading | 1 — Limited | 1 — Limited | 1 — Conditional |
+| Capital One Venture X | 0 — Not Offered | 1 — Limited | 1 — Limited | 1 — Limited | 1 — Conditional |
+| Chase Sapphire Reserve | 0 — Not Offered | 2 — Included | 1 — Limited | 1 — Limited | 1 — Conditional |
+| DAN TravelAssist | 0 — Not Offered | 3 — Industry Leading | 2 — Included | 1 — Specialized | 0 — Not Offered |
+| EA+ | 0 — Not Offered | 2 — Included | 2 — Included | 1 — Limited | 0 — Not Offered |
+| GeoBlue | 0 — Not Offered | 2 — Included | 2 — Included | 3 — Industry Leading | 1 — Limited |
+| Global Guardian | 0 — Not Offered | 3 — Industry Leading | 1 — Limited | 1 — Limited | 1 — Limited |
+| International SOS | 1 — Limited | 3 — Industry Leading | 1 — Limited | 3 — Industry Leading | 1 — Limited |
+| Medjet | 0 — Not Offered | 2 — Included | 2 — Included | 0 — Not Offered | 0 — Not Offered |
+| Overwatch x Rescue | 0 — Not Offered | 2 — Included | 2 — Included | 0 — Not Offered | 1 — Limited |
+| SkyMed | 0 — Not Offered | 2 — Included | 2 — Included | 1 — Limited | 0 — Not Offered |
+| Travel Guard (AIG) | 0 — Not Offered | 2 — Included | 2 — Included | 1 — Limited | 1 — Limited |
+| Travelex Insurance | 0 — Not Offered | 2 — Included | 2 — Included | 1 — Limited | 1 — Limited |
+| WorldTrips (Atlas Travel) | 1 — Conditional | 2 — Included | 2 — Included | 1 — Limited | 1 — Limited |
 
-Legend: ✓ Best = best-in-class · ✓ = capable/included · ◐ = limited or conditional · ✗ = not available
+Scale (0–3): 3 — Industry Leading (best-in-class delivery, direct and without preconditions) · 2 — Included (provided under standard terms and typical policy limits) · 1 — Limited / Conditional / Specialized (restricted form; the label names the constraint — narrow scope or low caps, pre-approval or prior hospitalization required, or capability confined to one domain such as dive medicine) · 0 — Not Offered.
+
+Note: the Essential Services rating (X/5) shown per provider is an editorial rating that weights how a service is delivered — direct dispatch versus approval-based reimbursement — and is not a sum of these capability scores.
 
 ---
 
@@ -160,10 +161,10 @@ Essential Services: 3/5.
 Hospital-of-choice medical transport. Members must be hospitalized 150+ miles from home and medically stable. Guaranteed transport to chosen hospital, no claims. No field rescue, no advisory, no security, no destination intelligence. Short-term from ~$99 (8-day), annual ~$315–$400.
 Best for: Budget-conscious travelers wanting a simple no-claims guarantee of returning to their home hospital.
 
-### Seven Corners — Most Flexible Insurance Pricing
+### Overwatch x Rescue (FocusPoint) — Low-Cost SOS Coordination
 Essential Services: 2.5/5.
-Insurance-based medical evacuation requiring medical necessity and claims. No field rescue. Highly flexible plan types: single-trip, annual multi-trip, long-term, student, expat. Adventure-sports rider required.
-Best for: Budget-conscious travelers and students needing flexible international travel insurance.
+Primarily a communications and coordination platform. Relays distress signals, coordinates with local rescue authorities, and may cover eligible search-and-rescue expenses — but does not perform field rescue and does not own or operate evacuation assets. Actual rescue operations remain the responsibility of government agencies and third-party responders. May arrange and fund medically necessary transport to the nearest appropriate hospital and medical repatriation via commercial airline with escort. Subject to extensive exclusions — hazardous-sport limits, motorsports exclusions, multiple country, medical and occupation exclusions — and a hard cap of two funded responses per membership year with 10 days of assistance per event. No claims (coordinated funding). $79.99/year.
+Best for: Budget-conscious travelers who want a low-cost SOS communications and rescue-funding service and accept a two-response annual cap, broad exclusions, and reliance on local authorities for actual rescue.
 
 ### SkyMed — Regional North America Transport
 Essential Services: 3/5.
@@ -192,7 +193,7 @@ Best for: Students and budget travelers on study-abroad programs accepting a cla
 - **EA+ over Global Rescue:** Senior traveler, low-risk trips. Simple "get me home if hospitalized" at ~$229/year, no age limits, no claims.
 - **DAN over Global Rescue:** Primarily diving. Dive-specific medical expertise, hyperbaric chamber coordination, decompression treatment matter more than broad rescue.
 - **AirMed over Global Rescue:** Top clinical quality of in-transit care matters most; you accept post-hospitalization activation. AirMed owns its fleet.
-- **Seven Corners over Global Rescue:** Need one product covering trip cancellation, luggage, medical bills, and basic medevac with maximum plan flexibility.
+- **Overwatch x Rescue over Global Rescue:** Your only requirement is low-cost SOS monitoring and communications relay at $79.99/year, and you accept no field rescue, no medical advisory, no destination intelligence, no security extraction, and a hard cap of two funded responses per year with extensive activity, country and occupation exclusions.
 - **GeoBlue over Global Rescue:** Expat or long-term traveler whose top need is in-network international medical providers, not rescue.
 - **International SOS over Global Rescue:** Large institutional buyer needing enterprise-grade global medical and security infrastructure.
 

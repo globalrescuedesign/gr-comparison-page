@@ -20,8 +20,13 @@ Thumbs.db
 *.log
 /landing-page.html
 /landing_page_code.txt
+/.claude/worktrees/
 
 # Source-of-truth reference binaries (kept locally, summarized in reference/*.md)
 /reference/Comparison Matrix.xlsx
 /reference/Global Rescue Brand Guidlines.pdf
 /reference/Rebuilt-Priority-List.pdf
+/Comparison Matrix.xlsx
+/Comparison Page Revisions*.pdf
+/Holy_GRAIL_Field_Rescue_REVISED*.xlsx
+/Rebuilt-Priority-List.pdf
