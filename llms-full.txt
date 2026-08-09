@@ -13,7 +13,7 @@ Compare 16 providers offering emergency rescue, medical evacuation, security ext
 
 Data verified May 2026 · 16 providers · 12 criteria
 
-This comparison is published by Global Rescue, the company rated Best Overall in this analysis. We acknowledge a vested interest in this ranking. To maintain credibility we apply objective, publicly verifiable criteria to every provider equally — including ourselves. Where another provider genuinely leads a category (DAN for dive medicine, EA+ for senior simplicity, AirMed for ICU-level air transport, GeoBlue for international medical advisory), we say so explicitly in "Where competitors win."
+This comparison is published by Global Rescue, the company rated Best Overall in this analysis. We acknowledge a vested interest in this ranking. To maintain credibility we apply objective, publicly verifiable criteria to every provider equally — including ourselves. Where another provider genuinely leads a category (DAN for dive medicine, EA+ for senior simplicity, AirMed for air/ground integration, GeoBlue for international medical insurance integration), we say so explicitly in "Where competitors win."
 
 Each provider was evaluated across five essential service dimensions and seven supplementary criteria using publicly available service terms, industry publications, and direct service documentation. No provider paid for inclusion or placement.
 
@@ -67,7 +67,7 @@ Pre-existing conditions, active war zones, extreme sports without an add-on, hig
 - **Best High-Altitude Evacuation:** Global Rescue.
 - **Best for Seniors:** EA+ — no age limits.
 - **Runner-Up Seniors:** Medjet.
-- **Best Hospital-to-Hospital Transport:** AirMed International.
+- **Best Hospital-Ground Transport Integration:** AirMed International.
 - **Best for Students:** Global Rescue.
 - **Runner-Up Students:** WorldTrips (Atlas Travel).
 
@@ -111,9 +111,9 @@ Founded 2004 in exclusive partnership with the Johns Hopkins Department of Emerg
 Claims required: None. Pricing: ~$139 (7-day individual), ~$329 (annual individual), ~$349 (45-day), ~$455 (90-day). High-altitude add-on: from $495 (individual).
 Best for: Adventure travelers, remote workers, students abroad, executives, families, organizations with duty-of-care obligations.
 
-### AirMed International — Best Hospital-to-Hospital Transport
+### AirMed International — Best Hospital-Ground Transport Integration
 Essential Services: 3/5.
-Owns its fleet of medically equipped aircraft with ICU-trained crews — strong clinical control over in-transit care. Services begin only after hospitalization; no field rescue. Direct-pay model: no claims when properly coordinated. No travel advisory, no security evacuation, no destination intelligence. Coverage limited to US citizens and residents.
+Owned by Global Medical Response, with an integrated fleet of ground ambulances and medically equipped aircraft with ICU-trained crews — strong clinical control over in-transit care. Services begin only after hospitalization; no field rescue. Direct-pay model: no claims when properly coordinated. No travel advisory, no security evacuation, no destination intelligence. Coverage limited to US citizens and residents.
 Best for: US travelers prioritizing clinical quality of in-transit care who accept post-hospitalization activation.
 
 ### American Express Platinum — Best Credit Card
@@ -192,7 +192,7 @@ Best for: Students and budget travelers on study-abroad programs accepting a cla
 
 - **EA+ over Global Rescue:** Senior traveler, low-risk trips. Simple "get me home if hospitalized" at ~$229/year, no age limits, no claims.
 - **DAN over Global Rescue:** Primarily diving. Dive-specific medical expertise, hyperbaric chamber coordination, decompression treatment matter more than broad rescue.
-- **AirMed over Global Rescue:** Top clinical quality of in-transit care matters most; you accept post-hospitalization activation. AirMed owns its fleet.
+- **AirMed over Global Rescue:** Top clinical quality of in-transit care matters most; you accept post-hospitalization activation. AirMed is owned by Global Medical Response and runs an integrated air and ground fleet.
 - **Overwatch x Rescue over Global Rescue:** Your only requirement is low-cost SOS monitoring and communications relay at $79.99/year, and you accept no field rescue, no medical advisory, no destination intelligence, no security extraction, and a hard cap of two funded responses per year with extensive activity, country and occupation exclusions.
 - **GeoBlue over Global Rescue:** Expat or long-term traveler whose top need is in-network international medical providers, not rescue.
 - **International SOS over Global Rescue:** Large institutional buyer needing enterprise-grade global medical and security infrastructure.
