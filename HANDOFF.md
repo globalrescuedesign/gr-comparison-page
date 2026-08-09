@@ -98,21 +98,58 @@ What changed:
 | `global-rescue-landing.html` | `<section id="when-competitors-win">` wrapped in an HTML comment |
 | `global-rescue-landing.html` | TOC entry removed; a placeholder comment marks where it was |
 | `global-rescue-landing.html` | Sections renumbered — Credit card coverage 06→05, How to choose 07→06, Scenarios 08→07, FAQs 09→08, Sources 10→09 |
-| `global-rescue-landing.html` | Disclosure paragraph: dropped the closing clause `in Where competitors win.[1]` — the sentence now ends `…we say so explicitly.` |
+| `global-rescue-landing.html` | Disclosure paragraph: dropped the closing clause `in Where competitors win.[1]` and repointed it at `Category Winners` + `provider reviews` (see note below) |
 | `global-rescue-landing.html` | Citation `[1]`'s surviving backref id moved to the Global Rescue provider review (`cite-1-back`), since the Disclosure instance carried the original anchor |
 | `llms.txt` | Removed the `Explicit "Where competitors win" sections` bullet |
 | `llms-full.txt` | Removed the `## Where Competitors Win` block; same Disclosure clause dropped |
 
 **To restore:** uncomment the section, restore the TOC entry, renumber 05–09 back to
-06–10, re-add the Disclosure clause and its `[1]` citation (moving the `cite-1-back`
-id back to the Disclosure paragraph), and re-add the `llms.txt` / `llms-full.txt`
-entries. The restore steps are also repeated in the HTML comment itself.
+06–10, repoint the Disclosure clause back at this section and re-add its `[1]` citation
+(moving the `cite-1-back` id back to the Disclosure paragraph from the Global Rescue
+provider review), and re-add the `llms.txt` / `llms-full.txt` entries. The restore steps
+are also repeated in the HTML comment itself.
 
-**Worth flagging on revisit:** the Disclosure paragraph names this section as the
-mechanism backing its own objectivity claim, and `llms.txt` advertised it as a trust
-signal to AI crawlers. While hidden, the page asserts even-handedness without pointing
-to where it demonstrates it — which is a live cost to the citation strategy described
-in section 4 above.
+### Disclosure now points at Category Winners + provider reviews
+
+The Disclosure paragraph names this section as the mechanism backing its own objectivity
+claim, and `llms.txt` advertised it as a trust signal to AI crawlers. Rather than leave
+the page asserting even-handedness with nothing to point at, the clause was repointed:
+
+> …we say so explicitly in **Category Winners** and the **provider reviews**.
+
+Why those two and not the comparison tables — this is the part worth remembering:
+
+- **Category Winners (`#winners`)** is the only place competitors are named as outright
+  winners. Four of eleven "Best" awards go to competitors: AMEX (Best Credit Card), DAN
+  (Best for Scuba Divers), EA+ (Best for Seniors), AirMed (Best Hospital-Ground Transport
+  Integration), plus runner-up slots for Medjet, Chase, GeoBlue and WorldTrips.
+- **Provider reviews (`#providers`)** were added to the clause because GeoBlue — named in
+  the Disclosure parenthetical — holds only *runner-up* spots in Category Winners. Its
+  actual lead is substantiated in its Section 04 review. Without this second target, one
+  of the four hand-named providers would be unsupported.
+- **Do not repoint this at the comparison tables.** Global Rescue scores 3/3 on all twelve
+  criteria and no competitor beats it on any single one. A reader following an objectivity
+  claim into a clean sweep draws the opposite conclusion. The methodology is even-handed;
+  the rendered result is not.
+
+If "Where Competitors Win" is restored, this clause should go back to pointing at it —
+it is the strongest evidence of the three.
+
+### 2026-08-09 — Citation backrefs repaired
+
+Six Sources entries had return arrows pointing at `#cite-N-back` anchors that existed
+nowhere in the file. Two distinct causes, two fixes:
+
+- **`[30]` / `[31]`** (helicopter ~$60,000, ground ambulance $5,000+) were never cited in
+  body copy even though the "How much does a medical evacuation cost" FAQ makes exactly
+  those claims. Added the missing superscripts there, which is where they belonged.
+- **`[8]`–`[11]`** (Skift, Fast Company, Inc., ISO 9001) support the Organization `awards`
+  array in the JSON-LD only — there is no body text to return to. Their arrows were
+  replaced with an italic *"Cited in structured data."* note. If these awards are ever
+  surfaced on the page, add an `id="cite-N-back"` superscript there and restore the arrow.
+
+Sources now: 31 entries, 27 return arrows, 4 structured-data notes, 40 in-body citations,
+all resolving.
 
 ### Open items from the 2026-08-09 legal review
 
