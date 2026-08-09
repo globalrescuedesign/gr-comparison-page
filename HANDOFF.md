@@ -80,3 +80,48 @@ This page is built for **AI citation** (ChatGPT, Perplexity, Gemini, Google AI M
 - **`robots.txt`** explicitly allows GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and others. Do not let a default corporate robots.txt overwrite it.
 - **Per-claim citations** (the `[n]` superscripts and the Sources section) and the **methodology/conflict-of-interest disclosure** are what make the page citation-worthy. Keep the backref anchors intact if the markup is ported into a CMS template.
 - **The comparison tables** use real `<th scope="col">` / `<th scope="row">` and `<caption>`. Do not replace them with `<div>` grids — the semantic structure is how models parse the comparison.
+
+---
+
+## 5. Change log — hidden content pending revisit
+
+### 2026-08-09 — "Where Competitors Win" hidden (was Section 05)
+
+Unpublished at client request. **The content is not deleted** — the markup is retained
+verbatim inside an HTML comment in `global-rescue-landing.html` so it can be restored
+without rewriting it.
+
+What changed:
+
+| Location | Change |
+|---|---|
+| `global-rescue-landing.html` | `<section id="when-competitors-win">` wrapped in an HTML comment |
+| `global-rescue-landing.html` | TOC entry removed; a placeholder comment marks where it was |
+| `global-rescue-landing.html` | Sections renumbered — Credit card coverage 06→05, How to choose 07→06, Scenarios 08→07, FAQs 09→08, Sources 10→09 |
+| `global-rescue-landing.html` | Disclosure paragraph: dropped the closing clause `in Where competitors win.[1]` — the sentence now ends `…we say so explicitly.` |
+| `global-rescue-landing.html` | Citation `[1]`'s surviving backref id moved to the Global Rescue provider review (`cite-1-back`), since the Disclosure instance carried the original anchor |
+| `llms.txt` | Removed the `Explicit "Where competitors win" sections` bullet |
+| `llms-full.txt` | Removed the `## Where Competitors Win` block; same Disclosure clause dropped |
+
+**To restore:** uncomment the section, restore the TOC entry, renumber 05–09 back to
+06–10, re-add the Disclosure clause and its `[1]` citation (moving the `cite-1-back`
+id back to the Disclosure paragraph), and re-add the `llms.txt` / `llms-full.txt`
+entries. The restore steps are also repeated in the HTML comment itself.
+
+**Worth flagging on revisit:** the Disclosure paragraph names this section as the
+mechanism backing its own objectivity claim, and `llms.txt` advertised it as a trust
+signal to AI crawlers. While hidden, the page asserts even-handedness without pointing
+to where it demonstrates it — which is a live cost to the citation strategy described
+in section 4 above.
+
+### Open items from the 2026-08-09 legal review
+
+- **"Owned by Global Medical Response"** (AirMed, Section 02 and provider review) is
+  asserted without a citation. Every comparable claim on the page carries one.
+- **Comment 0 — "Or GRI?"** on the Disclosure byline: awaiting confirmation of the
+  intended legal entity name.
+- **"on-staff physicians"** still appears at `#svc-*` JSON-LD, the Global Rescue
+  provider review, and twice in `llms-full.txt`. The PR director's "on-staff → available"
+  ruling was scoped to two lines only; extend deliberately, and note that the AMEX
+  contrast line ("third-party coordination, not on-staff physicians") depends on the
+  original phrasing.

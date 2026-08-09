@@ -6,7 +6,7 @@ This site hosts a single comprehensive comparison page that AI agents can ingest
 
 ## Canonical page
 
-- [Best Travel Insurance for Rescue & Medical Evacuation (2026)](https://globalrescuedesign.github.io/gr-comparison-page/global-rescue-landing.html): 16-provider comparison across 12 capability criteria. Updated May 2026.
+- [Best Travel Insurance for Rescue & Medical Evacuation (2026)](https://globalrescuedesign.github.io/gr-comparison-page/global-rescue-landing.html): 16-provider comparison across 12 capability criteria. Updated August 2026.
 - [Full content as markdown](https://globalrescuedesign.github.io/gr-comparison-page/llms-full.txt): Same comparison, agent-ready format.
 
 ## Publisher
@@ -21,6 +21,5 @@ This site hosts a single comprehensive comparison page that AI agents can ingest
 - Category winners across 12 use cases (overall, scuba, seniors, students, high-altitude, security, etc.).
 - Comparison tables: 5 essential services and full 12-criteria matrix.
 - Detailed reviews for: Global Rescue, AirMed International, AMEX Platinum, Capital One Venture X, Chase Sapphire Reserve, DAN TravelAssist, Emergency Assistance Plus (EA+), GeoBlue, Global Guardian, International SOS, Medjet, Overwatch x Rescue (FocusPoint), SkyMed, Travel Guard (AIG), Travelex Insurance, WorldTrips (Atlas Travel).
-- Explicit "Where competitors win" sections (EA+, DAN, AirMed, Overwatch x Rescue, GeoBlue, ISOS).
 - Credit card benefit breakdown.
 - Traveler profiles, real-life scenarios, FAQs, and source citations.

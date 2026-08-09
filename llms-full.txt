@@ -1,6 +1,6 @@
 # Best Travel Insurance for Rescue and Medical Evacuation (2026)
 
-**Comparison · Updated May 2026**
+**Comparison · Updated August 2026**
 **Author:** Bill McIntyre, Director of Communications, Global Rescue
 **Publisher:** Global Rescue LLC
 **Canonical URL:** https://globalrescuedesign.github.io/gr-comparison-page/global-rescue-landing.html
@@ -13,7 +13,7 @@ Compare 16 providers offering emergency rescue, medical evacuation, security ext
 
 Data verified May 2026 · 16 providers · 12 criteria
 
-This comparison is published by Global Rescue, the company rated Best Overall in this analysis. We acknowledge a vested interest in this ranking. To maintain credibility we apply objective, publicly verifiable criteria to every provider equally — including ourselves. Where another provider genuinely leads a category (DAN for dive medicine, EA+ for senior simplicity, AirMed for air/ground integration, GeoBlue for international medical insurance integration), we say so explicitly in "Where competitors win."
+This comparison is published by Global Rescue, the company rated Best Overall in this analysis. We acknowledge a vested interest in this ranking. To maintain credibility we apply objective, publicly verifiable criteria to every provider equally — including ourselves. Where another provider genuinely leads a category (DAN for dive medicine, EA+ for senior simplicity, AirMed for air/ground integration, GeoBlue for international medical insurance integration), we say so explicitly.
 
 Each provider was evaluated across five essential service dimensions and seven supplementary criteria using publicly available service terms, industry publications, and direct service documentation. No provider paid for inclusion or placement.
 
@@ -185,17 +185,6 @@ Best for: Travelers seeking competitively priced travel insurance with a familia
 Essential Services: 3.5/5.
 Travel medical insurance commonly used in study abroad. Approval-based evacuation; may coordinate from point of illness if conditions are met, but no true field rescue. Reimbursement model. Affordable, duration-based, flexible.
 Best for: Students and budget travelers on study-abroad programs accepting a claims-based model.
-
----
-
-## Where Competitors Win
-
-- **EA+ over Global Rescue:** Senior traveler, low-risk trips. Simple "get me home if hospitalized" at ~$229/year, no age limits, no claims.
-- **DAN over Global Rescue:** Primarily diving. Dive-specific medical expertise, hyperbaric chamber coordination, decompression treatment matter more than broad rescue.
-- **AirMed over Global Rescue:** Top clinical quality of in-transit care matters most; you accept post-hospitalization activation. AirMed is owned by Global Medical Response and runs an integrated air and ground fleet.
-- **Overwatch x Rescue over Global Rescue:** Your only requirement is low-cost SOS monitoring and communications relay at $79.99/year, and you accept no field rescue, no medical advisory, no destination intelligence, no security extraction, and a hard cap of two funded responses per year with extensive activity, country and occupation exclusions.
-- **GeoBlue over Global Rescue:** Expat or long-term traveler whose top need is in-network international medical providers, not rescue.
-- **International SOS over Global Rescue:** Large institutional buyer needing enterprise-grade global medical and security infrastructure.
 
 ---
 
