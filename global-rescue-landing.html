@@ -191,6 +191,10 @@
   --tbl-line: #f1f5f9;
   --tbl-name: #1d293d;
   --tbl-gr-tint: rgba(255, 241, 242, 0.4);
+  /* Opaque equivalent of --tbl-gr-tint over white. The sticky provider column must be
+     opaque or horizontally scrolled cells show through it. */
+  --tbl-gr-tint-solid: #fff9fa;
+  --tbl-gr-tint-solid-hover: #fff1f2;
   --pill-lead-bg: #ecfdf5;  --pill-lead-line: #a4f4cf;  --pill-lead-fg: #007a55;
   --pill-inc-bg:  #eff6ff;  --pill-inc-line:  #bedbff;  --pill-inc-fg:  #1447e6;
   --pill-lim-bg:  #fffbeb;  --pill-lim-line:  #fee685;  --pill-lim-fg:  #bb4d00;
@@ -228,8 +232,10 @@ p { margin: 0 0 14px 0; }
 /* HEADER */
 .site-header { background: var(--bg); border-bottom: 1px solid var(--line); padding: 16px 0; position: sticky; top: 0; z-index: 50; }
 .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
-.logo { display: inline-flex; align-items: center; }
-.logo img { height: 36px; width: auto; display: block; }
+/* flex: none stops the header compressing the logo — without it the img box is
+   squeezed horizontally while height stays fixed, which skews the wordmark. */
+.logo { display: inline-flex; align-items: center; flex: none; }
+.logo img { height: 36px; width: auto; display: block; object-fit: contain; }
 .main-nav { display: flex; align-items: center; gap: 30px; margin-left: auto; margin-right: 28px; }
 .main-nav a { font-family: 'Roboto Condensed', sans-serif; font-size: 14px; font-weight: 700; color: var(--ink); text-transform: uppercase; letter-spacing: 0.5px; transition: color 0.15s; }
 .main-nav a:hover { color: var(--red); text-decoration: none; }
@@ -271,7 +277,11 @@ p { margin: 0 0 14px 0; }
 /* TOC SIDEBAR */
 .toc { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); }
 .toc-header { background: var(--ink); color: white; padding: 14px 22px; font-family: 'Roboto Condensed', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.toc-toggle-icon { display: none; font-size: 14px; line-height: 1; transition: transform 0.2s ease; }
+.toc-toggle-icon { display: none; line-height: 1; }
+.toc-toggle-icon svg { display: block; width: 20px; height: 20px; }
+.toc-toggle-icon .icon-close { display: none; }
+.toc.is-open .toc-toggle-icon .icon-menu { display: none; }
+.toc.is-open .toc-toggle-icon .icon-close { display: block; }
 .toc-list { list-style: none; padding: 0; margin: 0; }
 .toc-item { border-top: 1px solid var(--line-soft); }
 .toc-item:first-child { border-top: none; }
@@ -333,6 +343,12 @@ sup.cite a:hover { text-decoration: underline; }
 .table-tab.active { color: var(--red); border-bottom-color: var(--red); }
 .compare-table-wrap { overflow-x: auto; border: 1px solid var(--tbl-line); border-radius: 16px; background: var(--bg); box-shadow: 0 20px 25px -5px rgba(226,232,240,0.5), 0 8px 10px -6px rgba(226,232,240,0.5); margin-bottom: 12px; }
 .compare-table-wrap:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+/* mobile-only affordance — the 12-criteria matrix still scrolls sideways on a phone */
+.table-scroll-hint { display: none; margin: 0 0 8px 0; font-size: 12.5px; color: var(--muted); font-style: italic; }
+.table-scroll-hint[hidden] { display: none; }
+/* Abbreviated column headers, shown only on narrow screens. The full label stays in the
+   DOM (visually hidden on mobile) so AT and crawlers always read the real heading. */
+.th-short { display: none; }
 .compare-table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 720px; }
 .compare-table caption { caption-side: top; text-align: left; padding: 16px 24px; background: var(--bg); font-weight: 700; font-size: 13px; color: var(--tbl-name); border-bottom: 1px solid var(--tbl-line); font-family: 'Roboto Condensed', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
 .compare-table thead th { background: var(--tbl-head); color: var(--tbl-head-label); padding: 20px 12px; text-align: center; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; line-height: 16px; vertical-align: middle; }
@@ -341,9 +357,11 @@ sup.cite a:hover { text-decoration: underline; }
 .compare-table tbody td { padding: 12px; text-align: center; border-bottom: 1px solid var(--tbl-line); vertical-align: middle; }
 .compare-table tbody tr:last-child th, .compare-table tbody tr:last-child td { border-bottom: 0; }
 .compare-table tbody tr.gr-row th, .compare-table tbody tr.gr-row td { background: var(--tbl-gr-tint); }
-.compare-table tbody tr.gr-row th { color: var(--red); }
+/* sticky column — opaque so scrolled cells cannot bleed through the provider name */
+.compare-table tbody tr.gr-row th { color: var(--red); background: var(--tbl-gr-tint-solid); }
 .compare-table tbody tr:hover th, .compare-table tbody tr:hover td { background: var(--bg-alt); }
-.compare-table tbody tr.gr-row:hover th, .compare-table tbody tr.gr-row:hover td { background: rgba(255, 241, 242, 0.75); }
+.compare-table tbody tr.gr-row:hover td { background: rgba(255, 241, 242, 0.75); }
+.compare-table tbody tr.gr-row:hover th { background: var(--tbl-gr-tint-solid-hover); }
 .compare-table tfoot td { padding: 14px 24px; font-size: 12px; color: var(--muted); background: var(--bg-alt); border-top: 1px solid var(--tbl-line); font-style: italic; }
 /* CAPABILITY PILLS — 3 Industry Leading / 2 Included / 1 Limited-Conditional-Specialized / 0 Not Offered */
 .cap { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; border: 1px solid transparent; white-space: nowrap; }
@@ -497,17 +515,21 @@ sup.cite a:hover { text-decoration: underline; }
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
-  /* Flex + display:contents lifts .toc out of <aside> so its containing block
-     becomes the full-height .main-grid — that is what lets it stay stuck for
-     the whole section rather than only across the aside's own height. */
+  /* display:contents lifts .toc out of <aside> so the section CTA keeps its place
+     in the flow while the nav is pulled out to a fixed bar. */
   .main-grid { display: flex; flex-direction: column; align-items: stretch; gap: 20px; }
   .main-grid > aside { display: contents; }
-  .toc { position: sticky; top: var(--header-h, 69px); z-index: 40; box-shadow: var(--shadow); }
+  /* Fixed, not sticky: the TOC sits below the hero in document order, so sticky
+     would leave it off-screen until scrolled to. Fixed makes it visible on landing. */
+  .toc { position: fixed; top: var(--header-h, 69px); left: 0; right: 0; z-index: 40;
+         border-radius: 0; border-left: 0; border-right: 0; box-shadow: var(--shadow); }
+  /* A fixed element reserves no flow space; the sticky header does. Offsetting <main>
+     by the bar height keeps the hero clear of it. */
+  #main { margin-top: var(--toc-h, 48px); }
   .toc-header { cursor: pointer; user-select: none; }
   .toc-toggle-icon { display: inline-block; }
   .toc-list { display: none; }
   .toc.is-open .toc-list { display: block; max-height: min(58vh, 460px); overflow-y: auto; overscroll-behavior: contain; }
-  .toc.is-open .toc-toggle-icon { transform: rotate(180deg); }
   .toc-item a { padding: 13px 16px; }
   .sidebar-cta { margin-top: 0; }
   .content-col > section { scroll-margin-top: calc(var(--header-h, 69px) + var(--toc-h, 48px) + 14px); }
@@ -518,6 +540,24 @@ sup.cite a:hover { text-decoration: underline; }
 }
 @media (max-width: 768px) {
   .main-nav { display: none; }
+  .site-header .container { gap: 16px; }
+  .logo img { height: 26px; }
+  /* COMPACT TABLES — pills drop to icon-only (the legend directly above defines each
+     one, and #table-full already uses this treatment). Lets Essential 5 fit a phone
+     with no horizontal scroll and roughly halves the scroll on the 12-criteria matrix. */
+  .compare-table { min-width: 0; font-size: 12.5px; }
+  #table-full .compare-table { min-width: 520px; }
+  .compare-table caption { padding: 12px 14px; font-size: 11.5px; letter-spacing: 0.6px; }
+  .compare-table thead th { padding: 12px 3px; font-size: 10px; letter-spacing: 0; line-height: 12px; }
+  .th-short { display: inline; }
+  .th-long { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+  .compare-table thead th:first-child, .compare-table tbody th { width: 90px; min-width: 90px; padding-left: 12px; padding-right: 6px; }
+  .compare-table tbody th { font-size: 13px; line-height: 17px; padding-top: 12px; padding-bottom: 12px; }
+  .compare-table tbody td { padding: 10px 4px; }
+  .compare-table .cap { padding: 6px; gap: 0; }
+  .compare-table .cap-txt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+  .compare-table tfoot td { padding: 12px 14px; }
+  .table-scroll-hint { display: block; }
   .card-grid, .competitor-wins, .profile-grid { grid-template-columns: 1fr; }
   .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
   .hero h1 { font-size: 32px; }
@@ -526,7 +566,19 @@ sup.cite a:hover { text-decoration: underline; }
   .footer-logos { justify-content: center; }
   .footer-copyright { text-align: center; }
 }
+@media (max-width: 420px) {
+  /* phone widths (375/390/414) — shave the provider column and cell gutters so
+     Essential 5 clears the viewport without horizontal scroll */
+  .compare-table thead th:first-child, .compare-table tbody th { width: 84px; min-width: 84px; padding-left: 10px; padding-right: 4px; }
+  .compare-table tbody td { padding: 10px 2px; }
+  /* column widths here are driven by the header labels, not the cells */
+  .compare-table thead th { font-size: 9.5px; padding: 12px 2px; }
+}
 @media (max-width: 480px) {
+  /* header only — narrower gutter here keeps the wordmark legible on 320px screens
+     without changing the page gutter everywhere else */
+  .site-header .container { padding: 0 16px; gap: 12px; }
+  .logo img { height: 22px; }
   .hero-content { padding: 44px 0; }
   .hero h1 { font-size: 28px; }
   .hero-overlay { background: linear-gradient(to right, rgba(245,245,247,0.96) 0%, rgba(245,245,247,0.88) 100%); }
@@ -595,7 +647,7 @@ sup.cite a:hover { text-decoration: underline; }
 
       <aside>
         <nav class="toc" aria-label="Table of contents">
-          <div class="toc-header"><span>On this page</span><span class="toc-toggle-icon" aria-hidden="true">▾</span></div>
+          <div class="toc-header"><span>On this page</span><span class="toc-toggle-icon" aria-hidden="true"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14"/><path d="M19 5L5 19"/></svg></span></div>
           <ul class="toc-list">
             <li class="toc-item"><a href="#coverage"><span class="toc-num">01</span>Included services</a></li>
             <li class="toc-item"><a href="#winners"><span class="toc-num">02</span>Category winners</a></li>
@@ -726,11 +778,11 @@ sup.cite a:hover { text-decoration: underline; }
               <thead>
                 <tr>
                   <th scope="col">Provider</th>
-                  <th scope="col">Field Rescue</th>
-                  <th scope="col">Medevac</th>
-                  <th scope="col">Repatriation</th>
-                  <th scope="col">Medical Advisory</th>
-                  <th scope="col">Security Extraction</th>
+                  <th scope="col"><span class="th-long">Field Rescue</span><span class="th-short" aria-hidden="true">Rescue</span></th>
+                  <th scope="col"><span class="th-long">Medevac</span><span class="th-short" aria-hidden="true">Medevac</span></th>
+                  <th scope="col"><span class="th-long">Repatriation</span><span class="th-short" aria-hidden="true">Repat.</span></th>
+                  <th scope="col"><span class="th-long">Medical Advisory</span><span class="th-short" aria-hidden="true">Advisory</span></th>
+                  <th scope="col"><span class="th-long">Security Extraction</span><span class="th-short" aria-hidden="true">Security</span></th>
                 </tr>
               </thead>
               <tbody>
@@ -869,24 +921,25 @@ sup.cite a:hover { text-decoration: underline; }
             </table>
           </div>
 
+          <p class="table-scroll-hint" id="hint-full" hidden>Swipe the table sideways to see all 12 criteria &rarr;</p>
           <div class="compare-table-wrap" id="table-full" role="tabpanel" aria-labelledby="tab-full" tabindex="0" hidden>
             <table class="compare-table" aria-describedby="table-key">
               <caption>Full 12-criteria matrix — all evaluated capabilities across 16 providers (data verified May 2026)</caption>
               <thead>
                 <tr>
                   <th scope="col">Provider</th>
-                  <th scope="col">Field Rescue</th>
-                  <th scope="col">Medevac</th>
-                  <th scope="col">Pay/Claims</th>
-                  <th scope="col">Med Advisory</th>
-                  <th scope="col">Travel Advisory</th>
-                  <th scope="col">Sec Advisory</th>
-                  <th scope="col">Repatriation</th>
-                  <th scope="col">Dest Intel</th>
-                  <th scope="col">Price Flex</th>
-                  <th scope="col">Sec Extraction</th>
-                  <th scope="col">High Altitude</th>
-                  <th scope="col">Student Pricing</th>
+                  <th scope="col"><span class="th-long">Field Rescue</span><span class="th-short" aria-hidden="true">Rescue</span></th>
+                  <th scope="col"><span class="th-long">Medevac</span><span class="th-short" aria-hidden="true">Medevac</span></th>
+                  <th scope="col"><span class="th-long">Pay/Claims</span><span class="th-short" aria-hidden="true">Claims</span></th>
+                  <th scope="col"><span class="th-long">Med Advisory</span><span class="th-short" aria-hidden="true">Med Adv</span></th>
+                  <th scope="col"><span class="th-long">Travel Advisory</span><span class="th-short" aria-hidden="true">Travel Adv</span></th>
+                  <th scope="col"><span class="th-long">Sec Advisory</span><span class="th-short" aria-hidden="true">Sec Adv</span></th>
+                  <th scope="col"><span class="th-long">Repatriation</span><span class="th-short" aria-hidden="true">Repat.</span></th>
+                  <th scope="col"><span class="th-long">Dest Intel</span><span class="th-short" aria-hidden="true">Intel</span></th>
+                  <th scope="col"><span class="th-long">Price Flex</span><span class="th-short" aria-hidden="true">Price</span></th>
+                  <th scope="col"><span class="th-long">Sec Extraction</span><span class="th-short" aria-hidden="true">Security</span></th>
+                  <th scope="col"><span class="th-long">High Altitude</span><span class="th-short" aria-hidden="true">Altitude</span></th>
+                  <th scope="col"><span class="th-long">Student Pricing</span><span class="th-short" aria-hidden="true">Student</span></th>
                 </tr>
               </thead>
               <tbody>
@@ -1848,6 +1901,9 @@ sup.cite a:hover { text-decoration: underline; }
     Object.keys(tables).forEach(function(k) {
       if (tables[k]) tables[k].hidden = (k !== target);
     });
+    // The swipe hint belongs to the 12-criteria panel only; CSS keeps it off on desktop.
+    var hintFull = document.getElementById('hint-full');
+    if (hintFull) hintFull.hidden = (target !== 'full');
   };
   tabs.forEach(function(tab, i) {
     tab.addEventListener('click', function() { selectTab(tab, false); });
