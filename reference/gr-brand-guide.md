@@ -81,7 +81,7 @@ Google Fonts:
 
 ---
 
-## Reconciliation with current `global-rescue-landing.html` tokens
+## Reconciliation with current `index.html` tokens
 
 | Current variable | Current value | Brand-correct value | Action |
 |---|---|---|---|

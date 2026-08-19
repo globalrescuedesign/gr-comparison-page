@@ -1,6 +1,6 @@
 # Developer Handoff — Rescue & Medical Evacuation Comparison Page
 
-**Artifact:** `global-rescue-landing.html` (single self-contained file — inline CSS + inline JS, no build step)
+**Artifact:** `index.html` (single self-contained file — inline CSS + inline JS, no build step)
 **Companion files:** `assets/img/`, `llms.txt`, `llms-full.txt`, `robots.txt`, `sitemap.xml`
 **Prepared:** 2026-07-28
 
@@ -11,18 +11,18 @@ The page is a single static HTML file. There is no build, bundler, or framework 
 ## 1. Required before publish: replace the staging domain
 
 Every absolute URL currently points at the GitHub Pages staging host
-`https://globalrescuedesign.github.io/gr-comparison-page/`.
+`https://gr-comparison-page.pages.dev/`.
 
 **All 12 must be rewritten to the final globalrescue.com URL.** If the canonical is missed, the staging copy competes with production for ranking and AI citation.
 
 | File | Line | What |
 |---|---|---|
-| `global-rescue-landing.html` | 8 | `<link rel="canonical">` |
-| `global-rescue-landing.html` | 13 | `og:url` |
-| `global-rescue-landing.html` | 15 | `og:image` |
-| `global-rescue-landing.html` | 22 | `twitter:image` |
-| `global-rescue-landing.html` | 69 | JSON-LD Article `@id` |
-| `global-rescue-landing.html` | 78 | JSON-LD `mainEntityOfPage.@id` |
+| `index.html` | 8 | `<link rel="canonical">` |
+| `index.html` | 13 | `og:url` |
+| `index.html` | 15 | `og:image` |
+| `index.html` | 22 | `twitter:image` |
+| `index.html` | 69 | JSON-LD Article `@id` |
+| `index.html` | 78 | JSON-LD `mainEntityOfPage.@id` |
 | `sitemap.xml` | 4 | `<loc>` |
 | `robots.txt` | 3 | verification comment |
 | `robots.txt` | 44 | `Sitemap:` |
@@ -33,7 +33,7 @@ Every absolute URL currently points at the GitHub Pages staging host
 Find them all with:
 
 ```bash
-grep -rn "globalrescuedesign.github.io" . --include="*.html" --include="*.txt" --include="*.xml"
+grep -rn "gr-comparison-page.pages.dev" . --include="*.html" --include="*.txt" --include="*.xml"
 ```
 
 Note the JSON-LD `@id` values are identifiers, not just links — they must match the canonical URL exactly, including the `#article` fragment.
@@ -44,7 +44,7 @@ Also confirm the staging site is de-indexed (or 301s to production) once the pag
 
 ## 2. Still needs developer work
 
-**Newsletter form** — `global-rescue-landing.html` (search `id="newsletter-form"`). The markup is styled and ready but has **no `action` and no submit handler**. Submitting currently just reloads the page. Wire it to the GR email platform endpoint and add success/error states.
+**Newsletter form** — `index.html` (search `id="newsletter-form"`). The markup is styled and ready but has **no `action` and no submit handler**. Submitting currently just reloads the page. Wire it to the GR email platform endpoint and add success/error states.
 
 **Favicon** — not set. Deliberately left out so production can use the official GR favicon set rather than a crop of the wordmark. Add `favicon.ico`, `apple-touch-icon.png`, and a web manifest per the GR standard. `<meta name="theme-color" content="#d71635">` is already in place.
 
@@ -88,18 +88,18 @@ This page is built for **AI citation** (ChatGPT, Perplexity, Gemini, Google AI M
 ### 2026-08-09 — "Where Competitors Win" hidden (was Section 05)
 
 Unpublished at client request. **The content is not deleted** — the markup is retained
-verbatim inside an HTML comment in `global-rescue-landing.html` so it can be restored
+verbatim inside an HTML comment in `index.html` so it can be restored
 without rewriting it.
 
 What changed:
 
 | Location | Change |
 |---|---|
-| `global-rescue-landing.html` | `<section id="when-competitors-win">` wrapped in an HTML comment |
-| `global-rescue-landing.html` | TOC entry removed; a placeholder comment marks where it was |
-| `global-rescue-landing.html` | Sections renumbered — Credit card coverage 06→05, How to choose 07→06, Scenarios 08→07, FAQs 09→08, Sources 10→09 |
-| `global-rescue-landing.html` | Disclosure paragraph: dropped the closing clause `in Where competitors win.[1]` and repointed it at `Category Winners` + `provider reviews` (see note below) |
-| `global-rescue-landing.html` | Citation `[1]`'s surviving backref id moved to the Global Rescue provider review (`cite-1-back`), since the Disclosure instance carried the original anchor |
+| `index.html` | `<section id="when-competitors-win">` wrapped in an HTML comment |
+| `index.html` | TOC entry removed; a placeholder comment marks where it was |
+| `index.html` | Sections renumbered — Credit card coverage 06→05, How to choose 07→06, Scenarios 08→07, FAQs 09→08, Sources 10→09 |
+| `index.html` | Disclosure paragraph: dropped the closing clause `in Where competitors win.[1]` and repointed it at `Category Winners` + `provider reviews` (see note below) |
+| `index.html` | Citation `[1]`'s surviving backref id moved to the Global Rescue provider review (`cite-1-back`), since the Disclosure instance carried the original anchor |
 | `llms.txt` | Removed the `Explicit "Where competitors win" sections` bullet |
 | `llms-full.txt` | Removed the `## Where Competitors Win` block; same Disclosure clause dropped |
 

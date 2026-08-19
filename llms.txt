@@ -6,8 +6,8 @@ This site hosts a single comprehensive comparison page that AI agents can ingest
 
 ## Canonical page
 
-- [Best Travel Insurance for Rescue & Medical Evacuation (2026)](https://globalrescuedesign.github.io/gr-comparison-page/global-rescue-landing.html): 16-provider comparison across 12 capability criteria. Updated August 2026.
-- [Full content as markdown](https://globalrescuedesign.github.io/gr-comparison-page/llms-full.txt): Same comparison, agent-ready format.
+- [Best Travel Insurance for Rescue & Medical Evacuation (2026)](https://gr-comparison-page.pages.dev/): 16-provider comparison across 12 capability criteria. Updated August 2026.
+- [Full content as markdown](https://gr-comparison-page.pages.dev/llms-full.txt): Same comparison, agent-ready format.
 
 ## Publisher
 

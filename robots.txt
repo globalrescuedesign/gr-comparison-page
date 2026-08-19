@@ -1,6 +1,6 @@
 # robots.txt — Global Rescue comparison page
 # Explicitly allow AI/agent crawlers per Agentic SEO requirements.
-# Verify externally with: curl -A "GPTBot" https://globalrescuedesign.github.io/gr-comparison-page/
+# Verify externally with: curl -A "GPTBot" https://gr-comparison-page.pages.dev/
 
 User-agent: GPTBot
 Allow: /
@@ -41,4 +41,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://globalrescuedesign.github.io/gr-comparison-page/sitemap.xml
+Sitemap: https://gr-comparison-page.pages.dev/sitemap.xml
